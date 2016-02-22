@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+.target{
+	color:#1B12FA;
+}
+.first-target {
+	color:red;
+	background: #ff0;
+}
