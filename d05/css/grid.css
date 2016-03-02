@@ -1,0 +1,48 @@
+body{
+	margin: 0;
+	height: 100vh;
+}
+/* 그리드표현 */
+.grid{
+	/*display: none;*/ /* 2.순간 전환 */
+	height: 0;
+	background: url(../images/grid-bg-pattern.png);
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+
+	transition: all 1s ease-out ; /* 1.움직임으로 표현 */
+}
+.grid.show{
+	/*display: block;*/ /* 2.순간 전환 */
+	height:100vh;
+}
+
+/**--------------------------------*/
+/* 기어버튼 */
+.grid-toggle{
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	color: #34c0ff;
+	font-size: 32px;
+	/* 설정한 애니메이션 이름, 시간, 움직임  */
+	animation: slideDownPoint 1.2s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+.grid-toggle:active {/*눌려질때*/
+	transform: scale(0.9);
+}
+@keyframes slideDownPoint {
+	0% { 
+		top: -400px;
+		opacity: 0;
+		transform: rotate(640deg);
+	}
+	50% { opacity: 0.5; }
+	100% { 
+		top: 10px;
+		opacity: 1;
+		transform: rotate(0deg);
+	}
+}
+

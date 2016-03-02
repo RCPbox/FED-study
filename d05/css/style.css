@@ -1,0 +1,55 @@
+/*html.no-js body{
+	background-color: #fff;
+	height:100vh;
+}
+html.js body{
+	background-color: #000;
+	height:100vh;
+}*/
+/** --------------------------------*/
+html,body{width: 100%; height: 100%;}
+
+/** body{
+background: linear-gradient( hsla(346, 100%, 31%, 0.9), hsla(346, 100%, 31%, 0.2) ),
+                  url('https://download.unsplash.com/photo-1433840496881-cbd845929862');
+background-repeat: repeat, no-repeat;  // linear-gradient() , url()
+background-size: 100%, cover;  // linear-gradient() , url()
+color:#fff;
+}
+ */
+h1{
+	margin-top: 0;
+	margin-bottom: 0;
+
+	/*background: linear-gradient( 45deg ,red 20%,green 50%,orange 80%);*/
+/*처음 red는 0부터 50%까지 green은 50%시작 나머지 orange는 100%까지 자동으로 들어간다.*/
+}
+/** --------------------------------*/
+/* body::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: hsla(346, 100%, 31%, 0.4);
+}
+.no-hsla body::after {   모더나이저 로 클래스 구분해서 hsla 안되는건 gif 로 구현
+	background: url('images/bg-trans-bg-color.gif');
+} */
+/** --------------------------------*/
+
+
+
+body{
+	height:100vh;
+	position: relative;
+	margin: 0;
+	background-color: transparent;
+	background-image: linear-gradient(transparent 98%, red 98%);
+	background-image: -webkit-linear-gradient(transparent 98%, red 98%);
+	background-size: 24px;
+}
+/*linear-gradient 활용법. Grid 그리드 베이스라인 그리기.
+방향은 기본적으로 위에서 아래로 처음엔 0부터 시작 transparent투명값 0-98%까지 , 다음red 98%부터 시작
+화면이 세로 꽉 차있을 때 background-size가 맞게 나옴.*/

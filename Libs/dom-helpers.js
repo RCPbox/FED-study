@@ -34,3 +34,24 @@ function getStyle(el, prop) { // (문서객체 , 문서객체의 속성)
 		return el.currentStyle[prop];
 	}
 }
+
+
+/**
+ * --------------------------------
+ * CSS3 신기능을 검수하는 헬퍼함수
+ * --------------------------------
+ */
+function checkCSS3Feature (feature) {
+	//DOM에 접근 하는것은 비용이 많이 든다. 느려진다. 
+	//반복 사용하는 것은 변수를 선언 캐시해서 사용.
+		var html = $('html'),
+			body = $('body'),
+			html_old_class = html.getAttribute('class');
+	if ( feature in body.style ) {
+		// 조건이 참이면 실행되는 결과
+		html.setAttribute('class', html_old_class + ' ' + feature);
+	} else {
+		// 조건이 거짓이면 실행되는 결과
+		html.setAttribute('class', html_old_class + ' ' + 'no-'+feature);
+	}
+}
