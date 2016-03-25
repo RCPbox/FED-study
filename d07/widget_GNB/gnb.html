@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- ie가 아닐때 -->
+<!--[if !IE]><!-->
+<html lang="ko-KR" class="no-js">
+<!--<![endif]-->
+<!--[if IE 6]><html lang="ko-KR" class="ie lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6 no-js"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="ie lt-ie10 lt-ie9 lt-ie8 ie7 no-js"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="ie lt-ie10 lt-ie9 ie8 no-js"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="ie lt-ie10 ie9 no-js"><![endif]-->
+<!-- html5 문서가 아니면 html 태그에 클래스를 줄수가 없다. 그런경우는 바디에 줘야 한다.
+ie10 부터는 조건부 주석문을 지원하지 않는다. 10과 11은 js 로 감지해서 조절해야 한다. -->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>GNB</title>
+<link rel="stylesheet" href="css/gnb.css">
+<style>
+	.no-js body {background: #f00; }
+	.lt-ie8 body {background: #ff0; }
+	.ie7 body {background: #888; }
+	.ie8 body {background: #333; }
+	.ie9 body {background: #ccc; }
+
+</style>
+<script src="../../Libs/modernizr.js"></script>
+<script src="../../Libs/detectizr.js"></script>
+<script src="../../Libs/dom-helpers.js"></script>
+<script>
+//"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3)"
+	// checkUserAgent('msie 10', 'ie10');
+//"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko"
+	// checkUserAgent('rv:11.0', 'ie11');
+</script>
+</head>
+<body>
+
+<!-- Global Navigation Bar -->
+<nav id="gnb">
+	<ul class="lv-1">
+		<li><a href="">OCN 소개</a></li>
+		<li><a href="">편성표</a></li>
+		<li><!-- 확장메뉴가 있다는 식별자 설정 -->
+<!-- 실질적으로 하위메뉴 열때는 얘한테 포커싱이 가거나 li 에 마우스오버가 되었을때만 열어주면 된다. a의 부모에 on을 주는걸 했었는데  이번에는 상대적으로 그 대상에게 이벤트를 걸었을때 그 대상의 부모에게 접근해서 on을 붙이게 하는게 편하겠죠. 그러니 뷰타겟은 잡지 않아도 된다는게 설계가 되고. -->
+			<a href="" class="expand-handle">프로그램</a>
+			<ul class="lv-2 expand-menu">
+				<li><a href="">아름다운 나의신부</a></li>
+				<li><a href="">처용2</a></li>
+				<li><a href="">No.1 WEEKEND</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="expand-handle">동영상</a>
+			<ul class="lv-2 expand-menu">
+				<li><a href="">추천동영상</a></li>
+				<li><a href="">동영상 전체보기</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="expand-handle">이벤트</a>
+			<ul class="lv-2 expand-menu">
+				<li><a href="">진행중이벤트</a></li>
+				<li><a href="">당첨자발표</a></li>
+				<li><a href="">티켓양도</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<script src="js/gnb.js"></script>
+</body>
+</html>
+
+
