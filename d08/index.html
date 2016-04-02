@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR" class="no-js">
+<!--<![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="ie lt-ie10 ie8 no-js"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="ie lt-ie10 ie9 no-js"><![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Javascript Function Scope &amp; Hoist</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- a 에 클릭 링크를 건다. 원하는건 이 인덱스가 나와야 한다.
+링크를 클릭하면 0,1,2,3 나오는 -->
+	<ul id="demo">
+		<li><a href="">link-1</a></li>
+		<li><a href="">link-2</a></li>
+		<li><a href="">link-3</a></li>
+		<li><a href="">link-4</a></li>
+	</ul>
+
+<!-- <script src="js/function-methods.js"></script> -->
+<!-- <script src="js/scope-hoist.js"></script> -->
+<script>
+	var demo = document.querySelector('#demo');
+	var demo_links = demo.querySelectorAll('a');
+
+	// demo_links = [].slice.call(demo_links);
+
+	for ( var i=demo_links.length-1; i > -1; i-- ) {
+		var link = demo_links[i];
+		// link.index = i;
+		link.onclick = function(index) {
+			console.log('link-'+ (index+1));
+			return false;
+		}.bind(link, i);//this를 link로 바꿔주고. i값 넘김.
+	}// bind는 함수가 가지고있는 메소드. 바로 실행 하지 않는다.
+
+// link 는 a요소 dom객체 이기 때문에 객체에 속성을 설정할 수 있다.
+// 그럼 index에 i를 담고 i는 3,2,1,0 순환하게 된다. 
+// 그때마다 index라는 속성에 담아주게 된다.
+// 그러면 결과적으로 자신을 클릭했을때 자기자신의 index를 가져 오는 거니깐 그러면 기억하고 있는 다는것. 이렇게 쓸수도 있고. bind 나 closer 쓸수도 있다.
+</script>
+</body>
+</html>

@@ -338,16 +338,16 @@ function addClass(el, className) {
  * attr(el, key)        // GET
  * attr(el, key, value) // SET
  * ------------------------------------------------------------------- */
- function attr(el, prop, value) {
- 	validate(isElement(el), '첫번째 인자는 요소노드여야 함.');
- 	validate(isString(prop), '두번째 인자는 문자여야 함.');
- 
- 	if( !value && value !== '' ) {
- 		return el.getAttribute(prop);
- 	} else {
- 		el.setAttribute(prop, value);
- 	}
- }
+function attr(el, prop, value) {
+	validate(isElement(el), '첫번째 인자는 요소노드여야 함.');
+	validate(isString(prop), '두번째 인자는 문자여야 함.');
+
+	if( !value && value !== '' ) {
+		return el.getAttribute(prop);
+	} else {
+		el.setAttribute(prop, value);
+	}
+}
 
 /** ----------------------------------------------------------------------
  * getStyle(설정된 스타일 속성) 함수
