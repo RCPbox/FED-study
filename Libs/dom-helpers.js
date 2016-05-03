@@ -42,10 +42,21 @@
 	*/
 	// 삽입.
 	function append(parent, child) {
-		validate(isElement(parent) && isElement(child), '전달인자는 모두 DOM 요소노드여야 합니다.');
+		validate(isElement(parent) && (isElement(child) || isTextNode(child) ), '전달인자는 모두 DOM 요소노드여야 합니다.');
 		parent.appendChild(child);
 	//.appendChild()
 	//- 부모페이지에 자식을 붙이는데 끝에 마지막 자식 요소 노드로 추가 하겠다.
+	}
+
+	// 부모의 첫번째 자식을 찾아 그 앞에 삽입한다.
+	function prepend(parent, child) {
+		validate(isElement(parent) && (isElement(child) || isTextNode(child) ), '전달인자는 모두 DOM 요소노드여야 합니다.');
+		var firstEl = first(parent, '*');
+		if (firstEl.length === 0) {// 요소가 하나도 없는경우.
+			append(parent, child);
+		} else {
+			before(firstEl, child);
+		}
 	}
 
 				//목표노드 , 삽입할노드[새로운노드]
@@ -193,13 +204,16 @@
 	 * last()  - 전달된 요소노드의 마지막 자손 요소 반환
 	 * -------------------------------------------------*/
 	 function first(parent, selector) {
-	 	return $(selector, parent)[0];
+	 	// return $(selector, parent)[0];// 한개만 있다면 노드리스트가 아니라 노드를 반환하기에 index가 없어서 undefind가 뜬다.
+
+	 	var firstEl = $(selector, parent);
+	 	return firstEl.length > 0 ? firstEl[0] : firstEl;
 	 }
 	//부모 노드를 던지고 선택자 표현식
 	function last(parent, selector) {
 		var childs     = $(selector, parent),
 			childs_len = childs.length;
-		return childs[ childs_len - 1 ];
+		return childs_len > 0 ? childs[ childs_len - 1 ] : childs;
 	}
 
 	/**--------------------------------
@@ -342,9 +356,13 @@
 	 * ------------------------------------------------------------------- */
 	function attr(el, prop, value) {
 		validate(isElement(el), '첫번째 인자는 요소노드여야 함.');
-		validate(isString(prop), '두번째 인자는 문자여야 함.');
+		// validate(isString(prop), '두번째 인자는 문자여야 함.');
 
-		if( !value && value !== '' ) {
+		if( isObject(prop) ) {
+			each( prop, function(key, value) {
+				el.setAttribute(key, value);
+			} );
+		} else if( !value && value !== '' ) {
 			return el.getAttribute(prop);
 		} else {
 			el.setAttribute(prop, value);
@@ -407,7 +425,14 @@
 		else { return getStyle(el, prop); }
 	}
 
-
+	/**--------------------------------
+	 * text() 함수. parent요소에 content 삽입.
+	 * --------------------------------*/
+	function text(parent, content) {
+		var method = parent.textContent ? 'textContent' : 'innerText';
+		parent[method] = content;
+	}
+	
 
 	/**
 	 * ======================================================================
@@ -521,6 +546,9 @@
 	// 노드의 유형(Node Type)
 	// ElementNode - 1  , AttributeNode - 2  , TextNode - 3
 	}
+	function isTextNode(txt) {
+		return txt ? txt.nodeType === 3 : false;
+	}
 	function isNodeList(list) {
 		return !!(list && list.length > 0 && list.item);
 	}// 조건 a , b , c 가 묶어서 형변환. !! 는 boolean 으로 형태를 바꿈.
@@ -586,13 +614,21 @@
 	// each 함수에 첫번째 데이타(array)를 전달. 두번째 콜백함수 받게된다.
 	var each;
 
-	if (Array.prototype.forEach) {
+	if (Array.prototype.forEach) {//최신브라우저 인지 확인.
 		each = function( data, fn ) {// ECMA5부터 배열의 forEach 등장. IE9+
-			data.forEach(fn);
+			validate( isFunction(fn), '두번째 전달인자는 함수여야 합니다.' );
+			if ( isArray(data) ) {
+				data.forEach(fn);
+			} else if (isObject(data)) {
+				for ( var key in data ) {
+					var value = data[key];
+					fn.call(global.y9, key, value);
+				}
+			}
 		};
 	}else{
 		each = function( data, fn) {
-			validate( isArray(data), '첫번째 전달인자는 배열이어야 합니다.' );
+/*			validate( isArray(data), '첫번째 전달인자는 배열이어야 합니다.' );
 			validate( isFunction(fn), '두번째 전달인자는 함수여야 합니다.' );
 			for (var i = 0, l=data.length; i < l; i++) {
 				var item = data[i],
@@ -600,7 +636,25 @@
 	//이렇게 넘긴다는 규칙 정의. 네이티브forEach와 같게 보이기 위해서 이렇게 한것.
 				fn.call(null, item, index, data);//fn콜백함수 전달인자에 넘기는 값.
 			}		// null 이면 윈도우 가리킴.
-		};//fn 함수가 실행될때 this context는 window 되라. 첫번째 인자 item은 반복문이 수행될때 즉,함수가 수행되게 되면 배열을 던질껀데 그럼 배열의 총 갯수가 나오고 그만큼 카운팅 반복 할 것이고 , 각 원소에 접근한다. 그렇게 약속된 값을 전달 사용 한다.
+		//fn 함수가 실행될때 this context는 window 되라. 첫번째 인자 item은 반복문이 수행될때 즉,함수가 수행되게 되면 배열을 던질껀데 그럼 배열의 총 갯수가 나오고 그만큼 카운팅 반복 할 것이고 , 각 원소에 접근한다. 그렇게 약속된 값을 전달 사용 한다.*/
+			validate( isFunction(fn), '두번째 전달인자는 함수여야 합니다.' );
+			if ( isArray(data) ) {
+				for( var i=0, l=data.length; i<l; i++ ) {
+					var item  = data[i],
+						index = i;
+					fn.call(null, item, index, data);
+				}
+			} else if (isObject(data)) {
+				for( var key in data ){
+						var value = data[key]; 
+						fn.call(global.y9, key, value);
+//객체경우 라이브러리 전달시켜서 그 내부에서 라이브러리 코드를 사용할 수 있게 한것.
+//jquery 도 함수 내부에서 this는 항상 jQuery 인스턴스가 되게 된다.
+//라이브러리 만드는 패턴.
+//call은 전달된 함수의 인자값을 셋팅한다.
+				}
+			}
+		};
 	}
 
 	// 외부에서 접근가능한 객체 설정
@@ -611,7 +665,7 @@
 
 		// 삽입(Inserting) 또는 이동(Moving)
 		append           : append,
-		// prepend          : prepend,
+		prepend          : prepend,
 		before           : before,
 		insertBefore     : insertBefore,
 
@@ -628,7 +682,7 @@
 		// 조작(Manipulation)
 		css              : css,
 		attr             : attr,
-		// text             : text,
+		text             : text,
 		hasClass         : hasClass,
 		addClass         : addClass,
 		removeClass      : removeClass,
@@ -648,7 +702,7 @@
 		isArray          : isArray,
 		isObject         : isObject,
 		isElement        : isElement,
-		// isTextNode       : isTextNode,
+		isTextNode       : isTextNode,
 		isNodeList       : isNodeList,
 		each             : each,
 		makeArray        : makeArray,

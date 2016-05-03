@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+body {
+	margin: 0;
+}
+
+#app{ /* 스크롤링이 되게 하기 위해  */
+	height:       200vh;
+	max-width:    960px;
+	margin-right: auto;
+	margin-left:  auto;
+	background:   #eaeaea;
+}
+#app h1{
+	margin-top:   0;
+	padding-top:  .3em;
+	padding-left: .3em;
+}
+
+/* span요소   스크롤값 표시*/
+.show-scroll-info{
+	position:    fixed;
+	right:       30px;
+	top:         40px;
+	font-size:   32px;
+	font-weight: 600;
+	text-align:  right;
+
+	animation: dungdung 0.6s linear infinite alternate;
+}
+
+.show-scroll-info::before{
+	content:   'Scroll Y Position ┐';
+	position:  absolute;
+	top:       -12px;
+	right:     0;
+	width:     110px;
+	font-size: 12px;
+}
+
+#scrolled-progress-bar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 0%;
+	height: 3px;
+	background: #FC414B;
+}
+
+@keyframes dungdung {
+	0% { transform: translateY(-2px); }
+	50% { transform: translateY( 0px); }
+	100% { transform: translateY( 2px); }
+}
+
