@@ -51,7 +51,7 @@
 		// console.log(this === window);// true
 
 		// 스크롤된 높이 값 출력
-		// window.pageYOffset(scrollY) , IE: document.scrollTop
+		// window.pageYOffset(scrollY) , IE: document.scrollTop | d4표 참조.
 					// 크로스 브라우징 위해 설정
 		var scrollY = this.scrollY || global.body.scrollTop;
 		// console.log(scrollY);

@@ -4,17 +4,17 @@ body{
 }
 /* 그리드표현 */
 .grid{
-	/*display: none;*/ /* 2.순간 전환 */
+	/*display: none;*/ /* 방법2.순간 전환 */
 	height: 0;
-	background: url(../images/grid-bg-pattern.png);
+	background: url('../images/grid-bg-pattern.png');
 	width: 960px;
 	margin-left: auto;
 	margin-right: auto;
 
-	transition: all 1s ease-out ; /* 1.움직임으로 표현 */
+	transition: all 1s ease-out ; /* 방법1.움직임으로 표현 */
 }
 .grid.show{
-	/*display: block;*/ /* 2.순간 전환 */
+	/*display: block;*/ /* 방법2.순간 전환 */
 	height:100vh;
 }
 

@@ -7,7 +7,7 @@
 <!--[if IE 7]><html lang="ko-KR" class="ie lt-ie10 lt-ie9 lt-ie8 ie7 no-js"><![endif]-->
 <!--[if IE 8]><html lang="ko-KR" class="ie lt-ie10 lt-ie9 ie8 no-js"><![endif]-->
 <!--[if IE 9]><html lang="ko-KR" class="ie lt-ie10 ie9 no-js"><![endif]-->
-<!-- html5 문서가 아니면 html 태그에 클래스를 줄수가 없다. 그런경우는 바디에 줘야 한다.
+<!-- html5 문서가 아니면 html 태그에 클래스를 줄수가 없다. 그런경우는 body에 줘야 한다.
 ie10 부터는 조건부 주석문을 지원하지 않는다. 10과 11은 js 로 감지해서 조절해야 한다. -->
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -26,6 +26,7 @@ ie10 부터는 조건부 주석문을 지원하지 않는다. 10과 11은 js 로
 <script src="../../Libs/detectizr.js"></script>
 <script src="../../Libs/dom-helpers.js"></script>
 <script>
+// navigator.userAgent
 //"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3)"
 	// checkUserAgent('msie 10', 'ie10');
 //"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko"

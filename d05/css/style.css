@@ -9,7 +9,7 @@ html.js body{
 /** --------------------------------*/
 html,body{width: 100%; height: 100%;}
 
-/** body{
+/* body{
 background: linear-gradient( hsla(346, 100%, 31%, 0.9), hsla(346, 100%, 31%, 0.2) ),
                   url('https://download.unsplash.com/photo-1433840496881-cbd845929862');
 background-repeat: repeat, no-repeat;  // linear-gradient() , url()

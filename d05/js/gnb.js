@@ -16,6 +16,7 @@ var count = 0;
  * -------------------------------- */
 
 // gnb_d1_links[0].onfocus = function () {
+// 	console.log(this.firstChild.nodeValue);
 // 	console.log(this.textContent);// 노드값 출력 IE9+
 // }
 
@@ -23,6 +24,8 @@ var k = 0,
 	l = gnb_d1_links.length;//1뎁스 a 갯수
 	//gnb_d1_links.length - 1; 마지막요소.
 while (k < l) {
+//반복문에 function 이 인라인으로 바로 들어오는것은 최적화된 코드가 아니다. 
+//잘라서 함수로 분리해서 호출.
 	// gnb_d1_links[k].onfocus = gnbD1Action;
 	gnb_d1_links[k].onfocus = gnbD1Focus;//포커스가 가면.
 	// gnb_d1_links[k].onBlur = gnbD1Blur;
@@ -52,7 +55,7 @@ function gnbD1Focus() {
  * --------------------------------*/
 // --------------------------------/
 // 선 감소 사례
-// var l = gnb_d1_links.length;
+// var l = gnb_d1_links.length;//5
 
 // while(--l >= 0) {//43210
 // 	gnb_d1_links[l].onfocus = gnbD1Action;
@@ -60,7 +63,7 @@ function gnbD1Focus() {
 
 // --------------------------------/
 // 후 감소 사례
-// var l = gnb_d1_links.length;
+// var l = gnb_d1_links.length;//5
 
 // while(l-- > 0) {//54321
 // 	gnb_d1_links[l].onfocus = gnbD1Action;
@@ -69,6 +72,8 @@ function gnbD1Focus() {
 var gnb_d1_lis = $('#gnb .lv-1 > li'),
 	gnb_d1_lis_len = gnb_d1_lis.length;
 
+//반복문에 function 이 인라인으로 바로 들어오는 것은 최적화된 코드가 아니다. 
+//잘라서 함수로 분리해서 호출.
 while(gnb_d1_lis_len--) {//54321 조건문 안에 0이 들어오면 거짓이라서 실행 되지 않는다.
 	//li 에 마우스가 빠져나오면 on을 제거 하는 이벤트 연결.
 	gnb_d1_lis[gnb_d1_lis_len].onmouseleave = collapseMenu;

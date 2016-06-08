@@ -14,7 +14,7 @@ var dom = {}; // 오브젝트 리터럴(객체 값) 할당(대입)
 dom.createEl = function(el_name) {
 	// 함수의 연산 결과 값을 반환 :: return
 	return document.createElement(el_name);//dom API에 있는 요소생성 방법.
-};//함수값을 객체[dom]의 속성에 할당한 케이스.
+};// 함수값을 객체[dom]의 속성에 할당한 케이스.
 
 dom.createText = function(text_content) {
 	return document.createTextNode(text_content);

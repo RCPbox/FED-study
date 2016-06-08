@@ -1,7 +1,7 @@
 ( function(global){
 
 	/**
-	* ======================================================================
+	 * ======================================================================
 	 * 생성(Creating)
 	 * ======================================================================
 	 */
@@ -62,7 +62,7 @@
 				//목표노드 , 삽입할노드[새로운노드]
 	function before(target, insert) {
 	//반드시 목표노드의 부모노드여야 한다.
-		parent(target).insertBefore(insert, target);//두개의 인자. 첫번째 를 두번째에 붙여라.
+		parent(target).insertBefore(insert, target);//두개 인자. 첫번째 집어넣을 요소를 두번째 요소 이전에 붙여라. w3s 검색.
 								//삽입할노드, 목표노드
 		return insert;
 	}// 상대적으로 쓰면 목표노드.부모노드
@@ -190,7 +190,7 @@
 		
 		while(childEl_len--) {
 			var el = childEl[childEl_len];
-			if (parentEl === el.parentNode) {
+			if (parentEl === el.parentNode) {//직계 자식인지 확인.
 				// 조건이 참일 경우, 배열에 원소 수집(Collection)
 				els.push(el);//직계 자식 여러개일수 있으니 배열에 담는다.
 			}
@@ -204,7 +204,8 @@
 	 * last()  - 전달된 요소노드의 마지막 자손 요소 반환
 	 * -------------------------------------------------*/
 	 function first(parent, selector) {
-	 	// return $(selector, parent)[0];// 한개만 있다면 노드리스트가 아니라 노드를 반환하기에 index가 없어서 undefind가 뜬다.
+	 	// return $(selector, parent)[0];
+// 한개만 있다면 노드리스트가 아니라 노드를 반환하기에 index가 없어서 undefind가 뜬다.
 
 	 	var firstEl = $(selector, parent);
 	 	return firstEl.length > 0 ? firstEl[0] : firstEl;
@@ -317,6 +318,7 @@
 	 	validate( isString(className), '두번째 전달인자 값은 문자여야만 합니다.' );
 	 
 	 	if ( hasClass(el, className) ) {
+	 				//클래스명 문자열 받아와서 문자열중 className을 '' 로 바꾸고 앞뒤빈칸 삭제.
 	 		var changeValue = attr(el, 'class').replace(className, '').trim();
 	 		attr(el, 'class', changeValue);
 	 	}
@@ -606,12 +608,12 @@
 	 * --------------------------------
 	 */
 	//사용 예시
-	//달라 함수 이용해서 노드 수집. makeArray 배열만들고. each문 사용해서 개별적으로 뭔가 css함수로 스타일을 지정.
+	//$ 함수 이용해서 노드 수집. makeArray 배열만들고. each문 사용해서 개별적으로 뭔가 css함수로 스타일을 지정.
 	// each( makeArray( $('#app *') ), function(item, index) {
 	// 	css( item, 'width: '+100*(index+2)+'px' );
 	// } );
 
-	// each 함수에 첫번째 데이타(array)를 전달. 두번째 콜백함수 받게된다.
+	// each 함수에 첫번째 데이타(Array)를 전달. 두번째 콜백함수 받게된다.
 	var each;
 
 	if (Array.prototype.forEach) {//최신브라우저 인지 확인.
@@ -636,7 +638,7 @@
 	//이렇게 넘긴다는 규칙 정의. 네이티브forEach와 같게 보이기 위해서 이렇게 한것.
 				fn.call(null, item, index, data);//fn콜백함수 전달인자에 넘기는 값.
 			}		// null 이면 윈도우 가리킴.
-		//fn 함수가 실행될때 this context는 window 되라. 첫번째 인자 item은 반복문이 수행될때 즉,함수가 수행되게 되면 배열을 던질껀데 그럼 배열의 총 갯수가 나오고 그만큼 카운팅 반복 할 것이고 , 각 원소에 접근한다. 그렇게 약속된 값을 전달 사용 한다.*/
+//fn 함수가 실행될때 this context는 window 되라. 첫번째 인자 item은 반복문이 수행될때 즉,함수가 수행되게 되면 배열을 던질껀데 그럼 배열의 총 갯수가 나오고 그만큼 카운팅 반복 할 것이고 , 각 원소에 접근한다. 그렇게 약속된 값을 전달 사용 한다.*/
 			validate( isFunction(fn), '두번째 전달인자는 함수여야 합니다.' );
 			if ( isArray(data) ) {
 				for( var i=0, l=data.length; i<l; i++ ) {

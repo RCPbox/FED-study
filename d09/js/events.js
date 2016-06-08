@@ -19,7 +19,7 @@
 			}
 		});
 
-		// 로딩이 되었을 때, 실행
+		// 로딩이 되었을 때, 넘겨받은 함수(클로져)실행
 		// detectDeviceWidth 는 클로저 함수
 		detectDeviceWidth();
 

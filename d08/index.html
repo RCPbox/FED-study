@@ -41,6 +41,15 @@
 // 그럼 index에 i를 담고 i는 3,2,1,0 순환하게 된다. 
 // 그때마다 index라는 속성에 담아주게 된다.
 // 그러면 결과적으로 자신을 클릭했을때 자기자신의 index를 가져 오는 거니깐 그러면 기억하고 있는 다는것. 이렇게 쓸수도 있고. bind 나 closer 쓸수도 있다.
+/*	for (var i = demo_links.length-1; i > -1; i--) {
+		var link = demo_links[i];
+		link.index = i;
+		link.onclick = function(link) {
+			// console.log('link-'+(index+1));
+			console.log(link.innerText);
+			return false;
+		}.bind(null, link);
+	}*/
 </script>
 </body>
 </html>

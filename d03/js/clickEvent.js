@@ -46,8 +46,8 @@ function wallpaperInit() {
  * --------------------------------
  * .controller 메뉴 제어
  * DOM Selector API - IE 8+
- * .querySelector()
- * .querySelectorAll()
+ * .querySelector()     ie8+
+ * .querySelectorAll()  ie9+
  * --------------------------------
  */
 // var controller = document.getElementsByClassName('controller')[0];

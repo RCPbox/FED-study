@@ -29,7 +29,7 @@ obj.m = fn;
 //obj.m 은 함수인데 이걸 실행할때 context를 바꾸고 싶다면
 //obj.m.call(document);// document
 
-//Function 이란 생성자에는 prototype 이란게 있고 그안에 call 이 있나?
+//Function 의 생성자에는 prototype 이란게 있고 그안에 call 이 있나?
 // !!Function.prototype.call  //true
 
 // call을 상속 받았기 때문에 모든 함수는 call 메소드를 가지고 있다.
@@ -44,9 +44,11 @@ obj.m = fn;
 // obj.m.call(document);// document
 // obj.m.call(document.head);// head
 
-// 정리 obj 가 객체가 소유한 m 이란 프라퍼티는 전역의 fn함수를 참조하고 있다. 결과적으로 obj.m은 함수이다.
+// 정리 - obj 가 객체가 소유한 m 이란 프라퍼티는 전역의 fn함수를 참조하고 있다. 
+// 결과적으로 obj.m은 함수이다.
 // 함수가 가지고 있는 기본적인 메소드중에 call 이 있다. 모든 함수가 가지고 있다.
-// call을 사용하면 첫번째 전달인자에 context를 지정할 수 있다. 그럼 우리가 특정 일을 하면서 context를 바꿔서 처리할 수 있게 된다.
+// call을 사용하면 첫번째 전달인자에 context를 지정할 수 있다. 
+// 그럼 우리가 특정 일을 하면서 context를 바꿔서 처리할 수 있게 된다.
 
 /**--------------------------------------------------------------------*/
 
@@ -63,7 +65,7 @@ function showTime() {
 
 	arguments[0] = true;// 설정이 가능함.
 
-	console.log('arguments.push??? => ', !!arguments.push);//배열인지 확인. false
+	console.log('arguments.push??? => ', !!arguments.push);//배열인지 확인. false 유사배열.
 
 	var i = 0, l = arguments.length;
 	for(; i<l; i++) {

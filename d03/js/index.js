@@ -25,7 +25,7 @@ var app = document.getElementById('app');
  */
 
 var app_firstChild = app.firstChild; // Node Type 노드의 유형?
-// console.log(app_firstChild.nodeType); // 텍스트 노드의 유형 값은???
+// console.log(app_firstChild.nodeType); // 텍스트 노드의 유형 값은???3
 
 /**
  * -----------------------------------------------------
@@ -37,10 +37,10 @@ var app_firstChild = app.firstChild; // Node Type 노드의 유형?
 // #app
 // #app article
 var articles = app.getElementsByTagName('article');
-// console.log(articles);
+// console.log(articles);//[article.post, article.post, article.post, article]
 
 var posts = app.getElementsByClassName('post'); // IE 9+ 그래서 개발자들이 class말고 id 붙여서 가지고 온다
-// console.log(posts);
+// console.log(posts);//article.post, article.post, article.post]
 
 // 원하는 대상(span.target)을 찾는 코드
 var first_target  = posts[0].getElementsByClassName('target')[0];
@@ -49,7 +49,10 @@ var second_target = posts[1].getElementsByClassName('target')[0];
 // 요소노드의 첫번째 자식노드(텍스트노드)의 노드 값을 출력
 // console.log(first_target.firstChild.nodeValue);
 
-first_target.onmouseenter = function() {
+// 1. 대상 선택( 선택자로 대상을 선택하고)
+// 2. 대상 조작( 선언 구문 내에서 대상을 꾸밉니다.)
+// 3. 언제? 조작을 할 것인가?
+first_target.onmouseenter = function() {// 타겟에 마우스 진입시.   
 	this.className = 'first-target';
 };
 
