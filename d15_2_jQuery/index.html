@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR" class="no-js">
+<!--<![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="ie lt-ie10 ie8 no-js"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="ie lt-ie10 ie9 no-js"><![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>jQuery - Javascript Library</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="../Libs/modernizr.js"></script>
+	<script src="../Libs/detectizr.js"></script>
+	<!-- jQuery v1.x -->
+	<script src="../Libs/jquery-1.11.3.min.js"></script>
+	<!-- jQuery v2.x -->
+	<!-- <script src="../Libs/jquery-2.1.4.min.js"></script> -->
+</head>
+<!-- <body class="manipulation-html-class"> -->
+<body class="assign-jquery-effect">
+
+	<!-- 시작: #page -->
+	<div id="page">
+		<h1>hi there</h1>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum alias quia, esse odit, provident labore dolorum rerum laborum quibusdam inventore veniam sed eaque tenetur, in doloremque. Molestias et temporibus provident animi in corporis nobis aliquam soluta earum sapiente placeat quam, mollitia pariatur alias magnam dicta expedita tempore. Soluta autem doloremque dolor atque incidunt modi veritatis, iure nemo perspiciatis ut doloribus facere adipisci vero consectetur cum, quam eos quisquam. Repudiandae nostrum explicabo minus modi autem cum suscipit a facere nam ut. Obcaecati, assumenda quod facere eum dolore temporibus, voluptate corrupti consectetur sequi, eveniet neque! Excepturi similique commodi, corrupti, quos nobis tempore.</p>
+
+		<ul>
+			<li><a href="">item-15</a></li>
+			<li><a href="">item-14</a></li>
+			<li><a href="">item-13</a></li>
+			<li><a href="">item-12</a></li>
+		</ul>
+	</div>
+	<!-- 끝: #page -->
+
+<!-- <script src="js/main.js"></script> -->
+<script>
+	( function(global,$,undefined){
+		'use strict';
+
+		var $page = $('#page'),
+			$page_headline = $page.find('h1');
+
+		// console.log($page, $page_headline);
+
+		// $page_headline.on('mouseenter', function() {
+		$page_headline.on('click', function() {
+			// console.log('마우스 올라온');
+			$page_headline.next().hide('slow');
+			// hide에 인자값 키워드 를 주면 그 시간만큼 애니메이션 효과.
+			// next() 다음요소를 찾는것. 그 요소가 반드시 단락<p> 이어야 한다. 라고 설정가능.
+			// 내부에 조건문 쓰는것.
+		});
+
+		// $page_headline.on('mouseleave', function() {
+		$page_headline.on('dblclick', function() {// dbclick 은 사용 안하는게 좋다?
+			// console.log('마우스 나감');
+			$page_headline.next().show('slow');
+			//show에 인자값을 주면 그 키워드 만큼 애니메이션 효과.
+			// slow는 0.6초 normal 0.4 fast 0.2   밀리세컨드가 들어간다. 600
+		});
+
+//헤드라인에 이벤트 걸어서 마우스가 올라 갔을때 단락요소가 안보이게 마우스가 나왔을때 보이게
+	} )(window, window.jQuery);
+
+</script>
+<!--
+	DOM이 완성된 후, Javascript를 실행하는 가장 빠른 지점은 이 곳이다.
+	window.onload, jQuery().ready()보다는 이 곳에 코드를 입력하길 권장한다.
+-->
+</body>
+</html>
+
