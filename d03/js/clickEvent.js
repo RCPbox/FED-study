@@ -1,4 +1,4 @@
-/*! clickEvent.js © yamoo9.net, 2015 */
+/*! clickEvent.js */
 var html = document.documentElement; /* 찾아서 */
 
 html.className = 'js'; /* 설정 한다. */

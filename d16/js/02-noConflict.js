@@ -1,4 +1,4 @@
-/*! main.js © yamoo9.net, 2015 */
+/*! main.js  */
 
 // $.noConflict()
 // $ 별칭(Alias)을 jQuery 라이브러리가 놓아준다(포기한다).

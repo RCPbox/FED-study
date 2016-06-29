@@ -1,4 +1,4 @@
-/*! main.js © yamoo9.net, 2015 */
+/*! main.js */
 (function(global, $, undefined){
 	'use strict';
 
