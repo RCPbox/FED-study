@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>jQuery - SlideShow</title>
+	<link rel="stylesheet" href="css/slideShow.css">
+	<script src="../../Libs/jquery-2.1.4.js"></script>
+</head>
+<body>
+
+	<div class="slideShowContainer">
+		<ul class="slideShow">
+			<li data-src="img/photo01.jpg"></li>
+			<li data-src="img/photo02.jpg"></li>
+			<li data-src="img/photo03.jpg"></li>
+			<li data-src="img/photo04.jpg"></li>
+			<li data-src="img/photo05.jpg"></li>
+		</ul>
+	</div>
+
+<script>
+
+;(function(global, $, undefined){
+	'use strict';
+
+	/**
+	 * --------------------------------
+	 * 대상 객체 참조
+	 * --------------------------------
+	 */
+	var $slideShowContainer = $('.slideShowContainer'),
+		$slideShow          = $('.slideShow', $slideShowContainer),
+		$slide              = $slideShow.children(),
+		slide_total         = $slide.length; // 5
+
+	// 슬라이드 인덱스 초기 설정 (값: 0)
+	$slideShow.data('slide_index', 0);
+
+	/**
+	 * --------------------------------
+	 * 이미지 삽입.
+	 * --------------------------------
+	 */
+	(function insertImage(){
+		var _index = $slideShow.data('slide_index');
+
+		if (_index < slide_total) {
+			// eq(index) 
+			$slide.eq( _index )
+				.append(function(index, html) {
+					var src = this.getAttribute('data-src');
+					return '<img src='+ src +' alt>';
+					// img 에 alt 를 안쓰면 스크린리더는 파일명을 읽는다.
+					// 배경이미지라 읽지 않아야 하니깐 alt 값 비워둔다.
+				});
+
+			$slideShow.data('slide_index', ++_index);
+			insertImage(); // 재귀함수.  내부에서만 불러 올수 있다.
+		} else {
+			$slideShow.data('slide_index', 0);
+			slideShow();
+		}
+	})(); // 즉시 실행 함수.
+
+	/**
+	 * --------------------------------
+	 * 슬라이드 쇼.
+	 * --------------------------------
+	 */
+	function slideShow() {
+		var _index = $slideShow.data('slide_index');
+
+		$slide.eq( _index )
+			.fadeIn(1000)
+			.delay(2000)
+			.fadeOut(1000, function() {
+				// 밑에 ifelse 문이 돌고 난 다음에 함수가 실행.
+				slideShow();
+			});
+
+		if (_index < slide_total - 1) {
+			$slideShow.data('slide_index', ++_index);
+		} else {
+			$slideShow.data('slide_index', 0);
+		}
+	}
+
+})(window, window.jQuery);
+
+</script>
+</body>
+</html>

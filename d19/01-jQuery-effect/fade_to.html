@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>jQuery Effect - Fade Basics</title>
+	<link rel="stylesheet" href="css/fade_to.css">
+	<script src="../../Libs/jquery-2.1.4.js"></script>
+	<script src="../../Libs/jquery.utils.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<a href class="fadeBox">
+			<h3>Services</h3>
+		</a>
+		<a href class="fadeBox">
+			<h3>Support</h3>
+		</a>
+		<a href class="fadeBox">
+			<h3>Innovation</h3>
+		</a>
+	</div>
+
+<script>
+// 이건 굳이 제이쿼리로 할 필요는 없는데 css를 사용하지 못하는 경우가 있다.
+// transition이 지원되지 않는 하위 브라우저 경우는 이런 방식을 사용.
+(function(global, $, undefined){
+	'use strict';
+	var $container = $('.container');
+
+	$container
+		.on('mouseenter', 'a.fadeBox', function(e) {
+			// 이벤트 위임 상에서 발생할 수 있는 문제.
+			// 직접 a에 거는게 아니라 부모에 걸다보니 생기는 문제.
+			// jQuery
+			var $this = $.cache(e.target).is('a') ?
+							$.cache(e.target) :
+							$.cache(e.target).parent();
+			$this.stop().fadeTo(400, 1);
+		})
+		.on('mouseleave', 'a.fadeBox', function(e) {
+			// Native
+			var $this = $.cache(e.target.nodeName === 'A' ?
+								e.target :
+								e.target.parentNode
+				);
+			$this.stop().fadeTo(400, 0.2);
+			//stop() 을 통해서 스텍 쌓이는걸 방지.
+			//true를 넣으면 쌓여있던것 삭제.
+		});
+})(window, window.jQuery);
+</script>
+</body>
+</html>
