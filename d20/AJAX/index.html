@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR" class="no-js">
+<!--<![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="ie lt-ie10 ie8 no-js"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="ie lt-ie10 ie9 no-js"><![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>jQuery Plugin</title>
+	<link rel="stylesheet" href="css/style.css">
+
+	<style>
+		.box { width: 100px; height: 100px; margin: 10px; }
+	</style>
+
+	<!-- jQuery -->
+	<script src="../../Libs/jquery-2.1.4.js"></script>
+	<script src="../../Libs/jquery.utils.js"></script>
+	<script src="../../Libs/jquery.radioClass.js"></script>
+</head>
+<body class="this-is-body">
+
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+
+<!-- <script src="js/main.js"></script> -->
+<script>
+// 백그라운드 색 입히는 플러그인.
+	(function(global, $){
+		$.fn.customBG = function(color) {
+			if($.type(color) === 'string') {
+				this.css('background', color || '#eee');
+			} 
+			// 배열을 받았을때.
+			else {
+				var that = this;
+				$.each(that, function(index, el) {
+					//내부의 el 은 DOM객체니깐 제이쿼리로 감싼다고 했다.
+					//팩토리 함수를 쓰지 않고 내부에서 솎아내기.
+					that.eq(index).css('background', color[index]);
+				});
+		// 플러그인을 쓸때 내부에 있는 개별 아이템을 쓸려면 each를 쓴다.
+		
+		//플러그인을 공부할때 가장먼저 필요한건 플러그인 내부의 this와
+		//플러그인 내부에 있는 each문이 반환하는 this가 다르다는 점 기억.
+			}
+		};
+	})(window, window.jQuery);
+
+	var colorList = ['#FFB03B', '#34C0FF', '#FC414B'];
+
+	$('.box').customBG(colorList);
+
+</script>
+<script src="js/leaning_ajax.js"></script>
+</body>
+</html>
+
+
+
