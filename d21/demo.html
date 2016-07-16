@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>KWCAG v2 - 운용의 용이성: 키보드 접근성</title>
+	<style>
+		/* 버튼처럼 아이콘도 보이게 */
+		[role="button"] { cursor: pointer; } 
+
+		.a11y-hidden {
+			overflow: hidden;
+			position: absolute;
+			clip:     rect(0, 0, 0, 0); /* IE 6,7 */
+			clip:     rect(0 0 0 0);
+			width:    1px;
+			height:   1px;
+			/*margin:   -1px;*/
+			border:   0;
+			padding:  0;
+		}
+		.a11y-hidden.focusable:focus {
+			overflow: visible;
+			position: static;
+			clip:     auto;
+			width:    auto;
+			height:   auto;
+			margin:   0;
+		}
+	</style>
+</head>
+<body>
+	<!-- window.open 같은 팝업방식은 쓰지 않는게 좋다. 
+		레이어팝업을 사용 하는게 좋다. 이건 별로의 스크립트로 처리. -->
+	<!-- <a role="button" href onclick="window.open('http://ejungle.co.kr/'); return false;">
+		<img src="http://ejungle.co.kr/img/common/btn_overlapping.gif" alt="ID 중복확인">
+	</a> -->
+
+	<a class="a11y-hidden focusable"
+		href="">hi</a>
+
+	<!-- WAI-ARIA 역할 변경. 이렇게 하면 안되지만 aria 능력이 강화됨. 
+	가능하다는 정도로 이해 이미지라 읽지 않고 ID 중복확인 버튼이라고 스크린리더가 읽는다.-->
+	<img class="a11y-hidden focusable"
+		id="checkIdBtn"
+		tabindex="0"
+		role="button"
+		src="http://ejungle.co.kr/img/common/btn_overlapping.gif" 
+		alt="ID 중복확인">
+
+	<p>야무 한글 로렘입숨 로렘입숨이란? 디자인을 위한 더미 텍스트!. 가슴을, 청춘 심장 하고 눈부신 쿵쿵대는.</p>
+
+	<script>
+		var btn = document.querySelector('#checkIdBtn'); // img 선택.
+
+		// DOM Level 2 진보 이벤트 모델 사용
+		btn.addEventListener('click', showPop);
+
+		// 비 포커스 요소는 클릭이벤트가 걸렸다 하더라도 엔터키와 스페이스로 작동하지 않는다.
+
+		// 비 포커스 요소에 키보드 접근성 설정.
+		btn.addEventListener('keydown', showPop);
+		btn.addEventListener('keypress', showPop);
+
+		function showPop(event) {
+			var event_type = event.type; // 'click', 'keydown'
+
+			switch(event_type) {
+				case 'click': console.log('clicked');
+				break;
+				case 'keydown':
+				case 'keypress':
+					var key = event.keyCode || event.which;// 입력한 키값.
+					console.log(
+						event.type +':' + (
+							key === 13 ?
+								' Enter' :
+								key === 32 ?
+									' Space' :
+									'Not Enter or Space'
+						)
+					);
+			}
+		}
+// 방향키는 keypress 이벤트 발동 안함. keydown 만 발생.
+// 일반키는 같은값이 나올지라도 알파벳키는 keydown 과 keypress 값이 다를수 있다.
+// 1.keydown 2.keypress 3.keyup 순서 발생.
+	</script>
+</body>
+</html>
+
