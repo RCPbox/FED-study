@@ -1,0 +1,12 @@
+{
+  "name": "rcpbox-combinejs",
+  "version": "0.0.2",
+  "description": "combineJS 모듈은 Javascript 파일을 병합(압축)합니다.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "minify": "^2.0.11",
+    "rcpbox-checktype": "0.0.1"
+  }
+}
