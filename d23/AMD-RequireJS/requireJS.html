@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR" class="no-js">
+<!--<![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="ie lt-ie10 ie8 no-js"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="ie lt-ie10 ie9 no-js"><![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Client-Side Javascript 모듈 관리 - RequireJS(AMD)</title>
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--
+		RequireJS 호출
+
+		requireJS.html
+			→ js/libs/require.js
+				→ js/main.js
+
+HTML5 에서는 data- 접두사를 쓸 수 있다.     확장자[ .js ]는 뺼수 있다.
+호출되는 것은 모든 로딩 끝난 다음. 중요한 건 비동기 호출 이라는 것.-->
+	<script src="js/libs/require.js" data-main="js/main"></script>
+
+</head>
+<body>
+
+</body>
+</html>
