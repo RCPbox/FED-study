@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*! style.css*/
+$body_min_width: 960px;
+
+
+body {
+	min-width: $body_min_width;
+	max-width: 1100px;
+	margin: 0 auto;
+	font: 0.875rem/1.5 'Helvetica Neue', Verdana;
+	color: #656565;
+}
+
+h1 {
+	font-weight: 100;
+	font-size: 84px;
+	line-height: 1.1;
+	letter-spacing: -0.005em;
+}
+
+.browser-sync {
+	color: #8B6DCF;
+}
+
+.jade {
+	color: #69C88A;
+}
+
+.sass {
+	color: #DC6167;
+}
+

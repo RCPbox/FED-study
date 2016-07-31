@@ -1,0 +1,26 @@
+//- 현재 페이지 내비게이션 메뉴 활성화.[class 준다는것.]
+//- current_page 변수 값이 뭐냐에 따라서 active 를 넣고 뺴고 할수 있다.
+//- 이러면 템플릿 사용할때 include 써서 nav 페이지를 분리 해서, 애를 가져다 쓰는 페이지에서 변수 값만 바꿔주면 활성화 페이지가 바뀌게 되는것.
+//- html로는 일일이 바꿔주어야 하는부분들을 변수 처리 할 수 있다.
+//- nav#gnb
+div&attributes({
+	'id'    : 'gnb',
+	'class' : [],
+	'role'  : 'navigation'
+	//- &attribute()를 활용한 속성 설정. 사용되는 표기식은 객체 리터럴을 쓰기 때문에 나중에 변수값을 받아서 처리 할 수 있도록 코드를 스크립팅 할 수 있다.
+})
+	+navigation([
+		{'href': '/',            'content': 'Home'   },
+		{'href': 'about.html',   'content': 'About'  },
+		{'href': 'works.html',   'content': 'Works'  },
+	])
+	//- ul(role="presentation")
+	//- 			li(class=(current_page == '/'? 'active' : '')): a(href="")&attributes({'aria-hidden' : 'false'}) Home
+	//- 			//- aria-hidden='true' 가되면 스크린리더가 읽지 않는다.
+	//- 			//- aria-hidden="false" 는 화면에 보여지는 상태라는 뜻.    IE8이상 완벽 지원. aria 는 지금 표준이다.
+	//- 			//- 어떨때 쓰냐면 다음에서는  app 에서 offcanvas 방식을 사용하는데 햄버거 버튼을 클릭하면 숨어있던 페이지가 슬라이딩하면서 들어오게 된다. 들어왔을때 뒤에 있는 밀려있는 컨텐츠는 읽히면 안되니깐 이때 이 내부에 있는 모든것을 감출수는 없으니 이때 aria-hidden="true" 를 주면 스크린 리더가 읽지 않는다. 그리고 현재 들어온 페이지만 읽게 되는거고 다시 날라가면 aria-hidden="true" 가 되고 아래있던것은 aria-hidden="false" 가 되는 것.
+	//- 			li(class=(current_page == 'about.html' ?'active' : '')): a(href="") About
+	//- 			li(class=(current_page == 'works.html' ?'active' : ''))
+	//- 				a(href="") Works
+	//- 			li(class=(current_page == 'contact.html' ?'active' : ''))
+	//- 				a(href="") Contact
