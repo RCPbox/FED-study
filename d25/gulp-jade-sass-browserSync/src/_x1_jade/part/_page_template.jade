@@ -1,0 +1,68 @@
+block settings
+	include config/_settings.jade
+
+include pages/_document_head
+
+	block meta_seo
+		include pages/head/_meta_seo
+
+	block meta_viewport
+		meta(name="viewport" ,content="width=device-width, initial-scale=1")
+
+	block stylesheets
+		link(rel="stylesheet", href="css/style.css")
+		//- Style 문서 내부에 삽입
+		style.
+			body {
+				background: #feffff;
+			}
+
+	block _scripts_head
+		include pages/scripts/_scripts_head
+		//- Script 문서 내부에 삽입
+		script.
+			//- $(document).ready(function(){})
+			//- jquery 팩토리함수에 function 던지면 애는 ready문과 같다.
+			jQuery(function($){
+				$('body').addClass('jade-sass-project');
+			});
+			//- 지금 작성한 코드 위치 head 내에서 script 코드를 만나면 html script 파서는 해석을 하지 않는다. 그래서 ready 문을 사용한것. 그런데 저렇게 명시적으로 $(document).ready(function(){}) 을 쓴게 아니라 jQuery 함수 내부에 펑션을 던지고 안쪽에 인자값 $ 받는 이유는 $는 충돌이 날 수 있기 때문에 function 내부는 스코프영역이니깐 안정적으로 jquery 쓸수 있기 때문에 이렇게 사용. 명시적으로 애는 jQuery 이고 내부의 $ 안쪽의 것들은 다 jQuery 가 되는것.  개인적으로는 body 끝쪽에 쓰는걸 선호하고 IIFE패턴을 사용하지만, 만약에 head쪽에 쓴다면 코드량을 짧게 쓸수있는 저 방식을 선호한다.
+
+		//- sass 와 jade 똑같은게 조건안에() 를 쓰지 않고 바로 비교구문을 쓴다.
+		//- 특정 페이지에서 뭘 쓰고 안쓰고 할때 이 변수 값을 사용할 수 있다.
+		//- if using_library == true
+			//- script(src="//code.jquery.com/jquery.min.js")
+			//- script.
+				jQuery(function($){
+					$('body').addClass('jade-sass-project');
+				});
+		//- else 
+			//- script.
+				//- console.log('아무런 라이브러리도 사용하지 않습니다.');
+
+	//- 배열 받아서 사용. 
+	//- 삼항식 사용  이걸가지고 메인page와 서브page를 구분할 수 있다.
+	body(class=[isMain == true? 'main-page':'sub-page'], 
+		class=body_classList
+	)
+		block gnb
+			include pages/body/_gnb
+
+		block header
+			include pages/body/_header
+
+		#app
+			//- 이런식으로 한번에 만들어 낼때 인라인 : 적용
+			nav: ul: li: a(href="#") link test
+
+		block main
+
+		block footer
+			include pages/body/_footer
+
+		block _script_footer
+			include pages/scripts/_scripts_footer
+
+
+
+

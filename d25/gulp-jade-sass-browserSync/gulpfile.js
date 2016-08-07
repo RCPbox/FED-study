@@ -12,6 +12,7 @@ var gulp        = require('gulp'),
 	gulpif      = require('gulp-if'),
 	filter      = require('gulp-filter'),
 	sourcemaps  = require('gulp-sourcemaps'),
+	shell       = require('gulp-shell'),
 
 	/* Browser 서버/싱크 ------------------------- */
 	browserSync = require('browser-sync'),
@@ -55,12 +56,9 @@ var config = {
 
 
 
-
-
-/**
- * ----------------------------------------------------------------
+/*---------------------------------------------------------------
  * Gulp 업무
- * ----------------------------------------------------------------
+ *---------------------------------------------------------------
  */
 // 기본 업무
 gulp.task('default', 
@@ -101,7 +99,38 @@ gulp.task('sass', function() {
 });
 
 
+// ---------------------------------------------------
 
+// 명령어 환경의 코드를 Gulp에서 수행할 수 있도록 조치
+gulp.task('clean', shell.task('rm -rf dist src/output'));
+
+// 필히 Ruby, Sass 설치되어 있어야 사용 가능!
+var from   = process.env.from || 'sass';
+var to     = process.env.to || 'scss';
+var input  = process.env.input || 'src/sass';
+var output = process.env.output || 'src/output';
+// 외부에서 설정 바꿀수 있게 하기 위해 
+gulp.task(
+	'convert',
+	shell.task('sass-convert -E utf-8 -F '+from+' -T '+to+' -R --indent t '+input + ' ' + output)
+);
+
+gulp.task(
+	'convert:scss2sass',
+	shell.task('sass-convert -E utf-8 -F scss -T sass -R --indent t '+input + ' ' + output)
+);
+gulp.task(
+	'convert:sass2scss',
+	shell.task('sass-convert -E utf-8 -F sass -T scss -R --indent t '+input + ' ' + output)
+);
+gulp.task(
+	'convert:css2scss',
+	shell.task('sass-convert -E utf-8 -F css -T scss -R --indent t '+input + ' ' + output)
+);
+gulp.task(
+	'convert:css2sass',
+	shell.task('sass-convert -E utf-8 -F css -T sass -R --indent t '+input + ' ' + output)
+);
 
 /**
  * ----------------------------------------------------------------

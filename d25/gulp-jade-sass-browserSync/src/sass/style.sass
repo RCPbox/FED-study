@@ -1,60 +1,26 @@
-// @charset 'utf-8' //루비 사스는 언어셋을 자동으로 만들어 준다.
-/*! style.css  */
-//
- * --------------------------------
- * 모듈 호출
- * --------------------------------
+@charset "utf-8"
+
 @import yamoo9/yamoo9
-//-----{{ go }}-----//
-//
- * --------------------------------
- * 스타일 코드
- * --------------------------------
+
+html
+	@extend %font-smoothing
+
 body
-	// 모듈 상속
 	@extend %reset-body
-	width:  800px
-	margin: 0 auto
-	font:   0.875rem 'Helvetica Neue', Verdana
-	line-height: 1.5
-	color:  #1F1B1B
+	// 중첩 속성
+	margin:
+		top: 100px
+		bottom: 80px
+	
+	// 폰트 속기형 + 중첩 속성.
+	font: 14px 'Nanum Gothic', Dotum, Sans-Serif
+		weight: 100
+		style: normal
 
-// 이런식으로 콤파스나 버본 수지를 가져다 쓰는것.
-
-header
-	h1 img
-		@extend %reset-a-img
-
-#gnb
-	ul
+// 중첩 규칙
+nav, 
+div[role='navigation']
+	ul,
+	ol
+		// 스타일 모듈 상속: 대체 선택자(%)
 		@extend %reset-list
-
-#main
-	table
-		@extend %reset-table
-
-	th, td
-		padding: 0.4em 0.8em
-
-main
-	.post
-		img
-			@extend %reset-a-img
-		table
-			@extend %reset-table
-
-#inherit
-	ul
-		@extend %reset-list
-
-// footer
-// 	a img
-// 		@extend %reset-a-img
-
-// 	nav
-// 		ul
-// 			@extend %reset-list
-
-// 	table
-// 		@extend %reset-table
-

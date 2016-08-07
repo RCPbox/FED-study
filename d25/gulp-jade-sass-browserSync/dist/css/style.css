@@ -1,39 +1,28 @@
-/*! style.css  */
+html {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
 body {
   margin: 0;
 }
 
-#gnb ul, #inherit ul {
+nav ul,
+nav ol,
+div[role='navigation'] ul,
+div[role='navigation'] ol {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
 
-header h1 img, main .post img {
-  border: none;
-}
-
-#main table, main .post table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-#main table th, main .post table th {
-  text-align: left;
-  font-weight: normal;
-}
-
 body {
-  width: 800px;
-  margin: 0 auto;
-  font: 0.875rem 'Helvetica Neue', Verdana;
-  line-height: 1.5;
-  color: #1F1B1B;
-}
-
-#main th, #main td {
-  padding: 0.4em 0.8em;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  font: 14px "Nanum Gothic", Dotum, Sans-Serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 /*# sourceMappingURL=maps/style.css.map */
