@@ -1,0 +1,39 @@
+@charset "utf-8"
+// * --------------------------------
+// * 재사용 모듈
+=contrastColor ($color: #aeadab, $property: 'color', $amount: 30%)
+	@if $property == 'color'
+		background: $color
+	@else
+		color: $color
+
+	@if lightness($color) > 50%
+		$property: darken($color, $amount)
+	@else
+		$prpperty: lighten($color, $amount)
+
+%button
+	$bg-color: #36907E
+	+contrastColor($bg-color)
+
+	display    : inline-block
+	border     : 1px solid
+	padding    : 0.3em 0.8em
+	text-align : center
+
+// * --------------------------------
+// * 사용
+.log-in-btn
+	$bg-color: #36907E
+	+contrastColor($bg-color, $amount:50%)
+	@extend %button
+
+.log-off-btn
+	$bg-color: #424242
+	+contrastColor($bg-color, 'background')
+	@extend %button
+
+.sucess-btn
+	$bg-color: #B9121B
+	+contrastColor($bg-color)
+	@extend %button

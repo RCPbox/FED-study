@@ -1,0 +1,21 @@
+.log-in-btn,.log-off-btn,.sucess-btn {
+  background: #36907E;
+  display: inline-block;
+  border: 1px solid;
+  padding: 0.3em 0.8em;
+  text-align: center;
+}
+
+.log-in-btn {
+  background: #36907E;
+}
+
+.log-off-btn {
+  color: #424242;
+}
+
+.sucess-btn {
+  background: #B9121B;
+}
+
+/*# sourceMappingURL=maps/style.css.map */
