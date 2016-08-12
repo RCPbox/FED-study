@@ -7,13 +7,14 @@ var gulp        = require('gulp'),
 
 	// CSS 프리프로세서
 	sass        = require('gulp-sass'),
+	// globImporter = require('sass-glob-importer'),
 
 	/* 유틸리티 ---------------------------------- */
 	gulpif      = require('gulp-if'),
 	filter      = require('gulp-filter'),
 	sourcemaps  = require('gulp-sourcemaps'),
 	shell       = require('gulp-shell'),
-	// 미디어 쿼리 병합.
+		// 미디어 쿼리 병합.
 	mq          = require('gulp-combine-mq'),
 
 	/* Browser 서버/싱크 ------------------------- */
@@ -38,7 +39,9 @@ var config = {
 	'sass': {
 		'indentSyntax':true,
 		// compact, compressed, nested, expanded
-		'outputStyle': 'expanded'
+		'outputStyle': 'expanded',
+		// 'importer': globImporter()
+
 	},
 	// 옵션 https://www.npmjs.com/package/gulp-sourcemaps
 	'sass_sourcemaps': {
@@ -75,14 +78,14 @@ gulp.task('default',
 gulp.task('watch', function() {
 	gulp.watch(['src/**/*.jade'], ['watch:jade']);
 	config.css_syntax === 'sass' ?
-	gulp.watch(['src/sass/**/*.sass'], ['sass']) : // sass
-	gulp.watch(['src/sass/**/*.scss'], ['sass']); // scss
+		gulp.watch(['src/sass/**/*.sass'], ['sass']) : // sass
+		gulp.watch(['src/sass/**/*.scss'], ['sass']); // scss
 });
 
 gulp.task('watch:jade', ['jade'], reload);
 
 
-// 변경 업무: Jade → HTML
+// 변경 업무: Jade > HTML
 gulp.task('jade', function() {
 	return gulp.src('src/jade/**/!(_)*.jade')
 		.pipe( jade( config.jade ) )
@@ -90,13 +93,14 @@ gulp.task('jade', function() {
 		.pipe( gulp.dest('dist') );
 });
 
-// 변경 업무: [node-sass] scss → CSS
+// 변경 업무: [node-sass] scss > CSS
 gulp.task('sass', function() {
 	return gulp.src('src/sass/**/*.'+ config.css_syntax )
 		.pipe(sourcemaps.init())
 		.pipe( sass( config.sass ).on('error', sass.logError) )
 		.pipe( mq() )
 		.pipe( sourcemaps.write(config.sass_sourcemaps.dir, config.sass_sourcemaps.options))
+		// .pipe( sourcemaps.write('./maps'))
 		.pipe( gulp.dest('dist/css') )
 		.pipe( reload({stream: true}) );
 });

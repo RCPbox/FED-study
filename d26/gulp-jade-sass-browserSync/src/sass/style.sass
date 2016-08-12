@@ -1,39 +1,44 @@
-@charset "utf-8"
 // * --------------------------------
-// * 재사용 모듈
-=contrastColor ($color: #aeadab, $property: 'color', $amount: 30%)
-	@if $property == 'color'
-		background: $color
-	@else
-		color: $color
+// * Bourbon - prefix 환경 변수
+// * --------------------------------
+$prefix-for-webkit:    true
+$prefix-for-mozilla:   true
+$prefix-for-microsoft: true
+$prefix-for-opera:     true
+$prefix-for-spec:      true
+// * --------------------------------
+// * Sass 라이브러리 호출
+@import bourbon/bourbon
+// @import yamoo9/yamoo9
 
-	@if lightness($color) > 50%
-		$property: darken($color, $amount)
-	@else
-		$prpperty: lighten($color, $amount)
+#page
+	+position(10px 2px 5px 10px)
+	+margin(10px 0px 2px 10px)
+	+transition(all .3s ease-in .2s)
+	+animation(fade-in 0.8s ease-in-out)
 
-%button
-	$bg-color: #36907E
-	+contrastColor($bg-color)
-
-	display    : inline-block
-	border     : 1px solid
-	padding    : 0.3em 0.8em
-	text-align : center
+	.box
+		margin: unpack(4em 2em 3em)
+		width: rem(1000px)
 
 // * --------------------------------
 // * 사용
-.log-in-btn
-	$bg-color: #36907E
-	+contrastColor($bg-color, $amount:50%)
-	@extend %button
 
-.log-off-btn
-	$bg-color: #424242
-	+contrastColor($bg-color, 'background')
-	@extend %button
+// body
+// 	a
+// 		@extend %reset-a-link
 
-.sucess-btn
-	$bg-color: #B9121B
-	+contrastColor($bg-color)
-	@extend %button
+// 	a img
+// 		@extend %reset-a-img
+
+// 	table
+// 		@extend %reset-table
+
+// 	a
+// 		&.readable-content
+// 			@extend %a11y-hidden
+
+// 		&.readable-focus-content
+// 			@extend %a11y-hidden
+
+// 			@extend %focusable

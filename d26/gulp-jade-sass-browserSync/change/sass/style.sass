@@ -1,0 +1,25 @@
+// * --------------------------------
+// * yamoo9 모듈 호출
+@import yamoo9/yamoo9
+
+// * --------------------------------
+// * 사용
+
+body
+	a
+		@extend %reset-a-link
+
+	a img
+		@extend %reset-a-img
+
+	table
+		@extend %reset-table
+
+	a
+		&.readable-content
+			@extend %a11y-hidden
+
+		&.readable-focus-content
+			@extend %a11y-hidden
+
+			@extend %focusable

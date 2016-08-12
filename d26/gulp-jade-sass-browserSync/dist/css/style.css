@@ -1,21 +1,21 @@
-.log-in-btn,.log-off-btn,.sucess-btn {
-  background: #36907E;
-  display: inline-block;
-  border: 1px solid;
-  padding: 0.3em 0.8em;
-  text-align: center;
+#page {
+  position: relative;
+  top: 10px;
+  right: 2px;
+  bottom: 5px;
+  left: 10px;
+  margin: 10px 0 2px 10px;
+  -webkit-transition: all 0.3s ease-in 0.2s;
+  -moz-transition: all 0.3s ease-in 0.2s;
+  transition: all 0.3s ease-in 0.2s;
+  -webkit-animation: fade-in 0.8s ease-in-out;
+  -moz-animation: fade-in 0.8s ease-in-out;
+  animation: fade-in 0.8s ease-in-out;
 }
 
-.log-in-btn {
-  background: #36907E;
-}
-
-.log-off-btn {
-  color: #424242;
-}
-
-.sucess-btn {
-  background: #B9121B;
+#page .box {
+  margin: 4em 2em 3em 2em;
+  width: 62.5rem;
 }
 
 /*# sourceMappingURL=maps/style.css.map */
