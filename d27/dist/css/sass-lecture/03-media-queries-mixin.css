@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+}
+
+#page {
+  max-width: 94%;
+  min-width: 480px;
+  min-height: 100vh;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+#page * {
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#page [class*='post-'] {
+  float: left;
+  width: 50%;
+  min-height: 9.375rem;
+  margin-bottom: 3%;
+  padding: 3%;
+  font-weight: 200;
+  text-align: center;
+}
+
+#page [class*='post-']:nth-child(3n) {
+  background: red;
+}
+
+#page [class*='post-']:nth-child(3n + 1) {
+  background: green;
+}
+
+#page [class*='post-']:nth-child(3n + 2) {
+  background: blue;
+}
+
+#page [class*='post-'] h3 {
+  font-size: 2.625rem;
+  font-weight: 100;
+}
+
+@media only screen and (min-width: 800px) {
+  #page {
+    padding-top: 20px;
+    min-width: 800px -20px;
+  }
+
+  #page [class*='post-'] {
+    width: 33%;
+    min-height: 12.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #page {
+    max-width: 1300px;
+    min-width: 1200px;
+  }
+
+  #page [class*='post-'] {
+    width: 300px;
+  }
+}
+
+/*# sourceMappingURL=../maps/sass-lecture/03-media-queries-mixin.css.map */

@@ -1,0 +1,147 @@
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,canvas,iframe,img,svg,video {
+  vertical-align: middle;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body a {
+  color: #1D1A1C;
+  text-decoration: none;
+}
+
+body a img {
+  border: none;
+}
+
+body table {
+  margin: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body table th {
+  text-align: left;
+  font-weight: normal;
+}
+
+body table caption,body a.readable-content,body a.readable-focus-content {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+body a.readable-focus-content:focus,body a.readable-focus-content:active {
+  overflow: visible;
+  position: static;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+#page {
+  position: relative;
+  top: 10px;
+  right: 2px;
+  bottom: 5px;
+  left: 10px;
+  margin: 10px 0 2px 10px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-animation: fade-in 0.8s ease-in-out;
+  -moz-animation: fade-in 0.8s ease-in-out;
+  -o-animation: fade-in 0.8s ease-in-out;
+  animation: fade-in 0.8s ease-in-out;
+}
+
+#page .box {
+  margin: 4em 2em 3em 2em;
+  width: 62.5rem;
+}
+
+@media print {
+  *::before,*::after,*::first-letter,*::first-line {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  a[href^="#"]:after,a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  pre,blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,h2,h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,h3 {
+    page-break-after: avoid;
+  }
+}
+
+/*# sourceMappingURL=maps/style.css.map */
