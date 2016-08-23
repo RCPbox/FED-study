@@ -1,0 +1,5 @@
+.banner {
+  -moz-animation: banner-slide-left 0.4 ease-out 0.3 2;
+  -webkit-animation: banner-slide-left 0.4 ease-out 0.3 2;
+  animation: banner-slide-left 0.4 ease-out 0.3 2;
+}

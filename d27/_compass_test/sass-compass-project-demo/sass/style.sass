@@ -1,0 +1,21 @@
+// @import "compass"
+// @import "compass/reset"
+// @import "compass/reset/utilities"
+
+// +global-reset()
+
+// .page
+// 	+nested-reset()
+// 	table
+// 		+reset-table()
+// 		th
+// 			+reset-table-cell()
+// 		td
+// 			+reset-table-cell()
+
+// 이렇게 내가 만들지 않아도 믹스인을 쓸 수 있다.
+
+@import "compass/css3/animation"
+.banner
+	+animation(banner-slide-left 0.4 ease-out 0.3 2)
+
