@@ -1,0 +1,27 @@
+@charset "UTF-8"
+// * --------------------------------
+// * Sass 조건(Condition) 구문
+// * --------------------------------
+
+$date: '2016.09.01'
+
+$icons: ('arrow-top':'images/arrow-top.png', 'arrow-right':'images/arrow-right.png', 'arrow-bottom':'images/arrow-bottom.png', 'arrow-left':'images/arrow-top.left')
+// map 은 JS의 객체와 같다고 했다. 그래서 key 와 value 를 가질 수 있다고 했다.
+
+// @if type-of($icons) == 'map'
+// 	@debug '$icons variable is map.'
+
+// @if type-of($icons) != 'map'
+// 	@debug '$icons variable is map.'
+// @else
+// 	@debug '$icons variable is not map.'
+
+
+$date-type: type-of($date)
+
+// @if $date-type == 'map'
+// 	@debug '$date 변수는 맵입니다.'
+// @else if $date-type == 'list'
+// 	@debug '$date 변수는 리스트입니다.'
+// @else
+// 	@debug '$date 변수는 맵도 리스트도 아닌, #{$date-type} 데이터 형입니다.'

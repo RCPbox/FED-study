@@ -37,11 +37,11 @@ var config = {
 	'css_syntax': 'sass', // sass , scss
 	// https://github.com/dlmanning/gulp-sass
 	'sass': {
+		'default-encoding' : 'utf-8',
 		'indentSyntax':true,
 		// compact, compressed, nested, expanded
 		'outputStyle': 'expanded',
 		// 'importer': globImporter()
-
 	},
 	// 옵션 https://www.npmjs.com/package/gulp-sourcemaps
 	'sass_sourcemaps': {
@@ -96,7 +96,7 @@ gulp.task('jade', function() {
 // 변경 업무: [node-sass] scss > CSS
 gulp.task('sass', function() {
 	return gulp.src('src/sass/**/*.'+ config.css_syntax )
-		.pipe(sourcemaps.init())
+		.pipe( sourcemaps.init() )
 		.pipe( sass( config.sass ).on('error', sass.logError) )
 		.pipe( mq() )
 		.pipe( sourcemaps.write(config.sass_sourcemaps.dir, config.sass_sourcemaps.options))
