@@ -7,7 +7,9 @@ var gulp        = require('gulp'),
 
 	// CSS 프리프로세서
 	sass        = require('gulp-sass'),
-	// globImporter = require('sass-glob-importer'),
+	rubySass     = require('gulp-ruby-sass'),
+	compass      = require('gulp-compass'),
+	autoprefixer = require('gulp-autoprefixer'),
 
 	/* 유틸리티 ---------------------------------- */
 	gulpif      = require('gulp-if'),
@@ -34,14 +36,21 @@ var config = {
 		'pretty': true
 	},
 	// Sass
+	'sass_engine': process.env.sass || 'compass', // 'node' or 'ruby' 'compass'
 	'css_syntax': 'sass', // sass , scss
 	// https://github.com/dlmanning/gulp-sass
 	'sass': {
-		'default-encoding' : 'utf-8',
-		'indentSyntax':true,
-		// compact, compressed, nested, expanded
-		'outputStyle': 'expanded',
-		// 'importer': globImporter()
+		'indentSyntax':true, // true: sass , false: scss
+		'outputStyle': 'expanded',// compact, compressed, nested, expanded
+	},
+	//https://www.npmjs.com/package/gulp-ruby-sass#sass-options
+	'ruby_sass': { // 옵션: Git Bash or Terminal ⇒ sass -h
+		'defaultEncoding'  : 'UTF-8',    // Windows 환경에서 CP949 오류 발생 시
+		'style'            : 'expanded', // compact, compressed, nested, expanded
+		'sourcemap'        : true,
+		'compass'          : true,
+		'require'          : ['bourbon'],// 라이브러리는 많기 때문에 배열로 받는다.
+		// 'no-cache'         : true
 	},
 	// 옵션 https://www.npmjs.com/package/gulp-sourcemaps
 	'sass_sourcemaps': {
@@ -51,8 +60,15 @@ var config = {
 			'sourceRoot'     : 'source'
 		}
 	},
+	// 브라우저 리스트 참고 URL: https://github.com/ai/browserslist#queries
+	// 2버전 전 것도 지원
+	'autoprefixer': [
+		'> 1%',
+		'last 2 versions'
+	],
 	// Browser-sync
-	'browserSync': { // 옵션: http://www.browsersync.io/docs/options/
+	// 옵션: http://www.browsersync.io/docs/options/
+	'browserSync': {
 		'server'  : ['dist'],
 		'port'    : 8800,
 		'notify'  : false,
@@ -67,19 +83,27 @@ var config = {
  */
 // 기본 업무
 gulp.task('default', 
-	['jade','sass'], 
-	function() {
+	['jade', 
+	config.sass_engine === 'ruby' ? 
+		'sass:ruby' : 
+		config.sass_engine === 'compass' ?
+			'sass:compass' :
+			'sass'
+	], function() {
 		// browserSync({'server': './dist'})
 		browserSync(config.browserSync)
+		gulp.start('images');
 		gulp.start('watch');
 });
 
 // 관찰 업무
 gulp.task('watch', function() {
 	gulp.watch(['src/**/*.jade'], ['watch:jade']);
-	config.css_syntax === 'sass' ?
-		gulp.watch(['src/sass/**/*.sass'], ['sass']) : // sass
-		gulp.watch(['src/sass/**/*.scss'], ['sass']); // scss
+	config.sass_engine  === 'ruby' ?
+		gulp.watch(['src/sass/**/*'], ['sass:ruby']) : 
+		config.sass_engine  === 'compass' ?
+			gulp.watch(['src/sass/**/*'], ['sass:compass']) :
+			gulp.watch(['src/sass/**/*.'+config.css_syntax], ['sass']);
 });
 
 gulp.task('watch:jade', ['jade'], reload);
@@ -98,11 +122,46 @@ gulp.task('sass', function() {
 	return gulp.src('src/sass/**/*.'+ config.css_syntax )
 		.pipe( sourcemaps.init() )
 		.pipe( sass( config.sass ).on('error', sass.logError) )
+		.pipe( autoprefixer(config.autoprefixer) )
 		.pipe( mq() )
-		.pipe( sourcemaps.write(config.sass_sourcemaps.dir, config.sass_sourcemaps.options))
+		.pipe( sourcemaps.write(config.sass_sourcemaps.dir, config.sass_sourcemaps.options) )
 		// .pipe( sourcemaps.write('./maps'))
 		.pipe( gulp.dest('dist/css') )
 		.pipe( reload({stream: true}) );
+});
+
+// 변경 업무: [ruby-sass] (sass|scss) → CSS
+gulp.task('sass:ruby', function() {
+	// gulp-ruby-sass 사용 시에는 디렉토리 명만 입력할 것!
+	return rubySass('src/sass/', config.ruby_sass)
+		.on('error', rubySass.logError)
+		.pipe( autoprefixer(config.autoprefixer) )
+		.pipe( sourcemaps.write(config.sass_sourcemaps.dir, config.sass_sourcemaps.options) )
+		.pipe( gulp.dest('dist/css') )
+		.pipe( filter('**/*.css') )
+		.pipe( reload({stream: true}) );
+});
+
+// compass
+gulp.task('sass:compass', function() {
+	gulp.src('src/sass/**/*')
+		.pipe(compass({
+			css   : 'dist/css',
+			sass  : 'src/sass',
+			image : 'dist/images'
+		}))
+		.on('error', errorLog)
+		.pipe( autoprefixer(config.autoprefixer) )
+		.pipe( gulp.dest('dist/css') )
+		.pipe( filter('**/*.css') )
+		.pipe( reload({stream: true}) );
+});
+
+
+// 업무: images 디렉토리 dist 디렉토리 안으로 이동
+gulp.task('images', function() {
+	return gulp.src('src/images/**/*')
+		.pipe( gulp.dest('dist/images') )
 });
 
 
