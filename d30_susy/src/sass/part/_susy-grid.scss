@@ -1,0 +1,10 @@
+// * -----------------------------------------
+// * Susy 그리드 프레임워크
+// * http://susydocs.oddbird.net/en/latest/
+// * -----------------------------------------
+@import "susy";
+
+// 베이스라인 변경값
+$base-line-height: 24px;
+// 변수명을 susy-gap 으로 바꿈.
+$susy-gap: $base-line-height;

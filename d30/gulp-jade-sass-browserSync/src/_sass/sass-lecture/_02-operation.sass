@@ -1,0 +1,77 @@
+@import "../bourbon/bourbon"
+
+// * --------------------------------
+// * Sass 연산
+// * 사칙연산 ( +, -, *, /, % )
+// * 비교연산 ( ==, !=, >, >=, <, <= )
+// * --------------------------------
+$base-font-size: 10px
+$global-padding: 9px
+
+
+$global-columns: 100px - $global-padding * 2
+
+$page-max-width: ($global-columns + ($global-padding * 2)) * 16
+
+%font-weight-normal
+	font-weight: normal
+
+#page
+	h1
+		font-size: $base-font-size * 2.4
+	h2
+		font-size: $base-font-size * 2.2
+		@extend %font-weight-normal
+	h3
+		font-size: $base-font-size * 2.0
+		@extend %font-weight-normal
+	h4
+		font-size: $base-font-size * 1.8
+		@extend %font-weight-normal
+	h5
+		font-size: $base-font-size * 1.6
+	h6
+		font-size: $base-font-size * 1.4
+	p
+		font-size: $base-font-size * 1.4
+
+
+.container
+	max-width: $page-max-width
+
+	*
+		box-sizing: border-box
+
+	table
+		margin:
+			@if ($global-padding > 10)
+				top: $global-padding/2
+				bottom: $global-padding/2
+			@else
+				top: 0
+				bottom: 0
+
+
+
+// * --------------------------------
+// * font 속기형 사용 시, 주의 점.
+// * --------------------------------
+// 단위 제거 함수.
+// bourbon-function: Strip Units
+@function deUnit($value)
+	// 함수 유효성 검사
+	@if type-of($value) == 'null'
+		@warn '전달인자 값이 전달되지 않았습니다.'
+	// 함수 연산 처리 결과 반환
+	@return $value / ($value * 0 + 1)
+
+#page .article
+	$font-size: deUnit($base-font-size) * 1.7
+	// @debug $font-size
+	// * --------------------------------
+	// * font 속기형 사용 시, 주의 점.
+	// * --------------------------------
+	font: $font-size+px/1.8 Verdanas
+
+
+

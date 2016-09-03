@@ -1,0 +1,74 @@
+@import "../bourbon/bourbon"
+
+// * ----------------------------------------
+// * CSS3 미디어쿼리 믹스인 사용  view
+// * ----------------------------------------
+@import "_00_config","_00_mixins"
+
+body
+	margin: 0
+
+#page
+	$store-width: 94%
+	$padding-gap: (100% - $store-width)/2
+
+	*
+		box-sizing: border-box
+		margin:
+			top: 0
+			bottom: 0
+
+	// ------------------------------------
+	// Mobile First
+	max-width: $store-width
+	min:
+		width: $mobile
+		height: 100vh
+
+	padding: 
+		left: $padding-gap
+		right: $padding-gap
+
+	[class*='post-']
+		float: left
+		width: 50%
+		min-height: rem(150px)
+		margin-bottom: $padding-gap
+		padding: $padding-gap
+		font-weight: 200
+		text-align: center
+		&:nth-child(3n)
+			background: red
+
+		&:nth-child(3n + 1)
+			background: green
+
+		&:nth-child(3n + 2)
+			background: blue
+
+		h3
+			font-size: rem(42px)
+			font-weight: 100
+	
+	// ---------------------------------------------
+	// Tablet Design
+	+mq('tablet')
+		$store-width: 70%
+		padding-top: 20px
+		min:
+			width: $tablet -20px
+		[class*='post-']
+			width: (99%/3)
+			min-height: rem(200px)
+
+	// ---------------------------------------------
+	// Desktop Design
+	+mq('desktop')
+		$store-width: $desktop + 100px
+		//http://sass-lang.com/documentation/Sass/Script/Functions.html#abs-instance_method 절대값 리턴
+		$padding-gap: abs($desktop - $store-width)/2
+		max-width: $store-width
+		min:
+			width: $desktop
+		[class*='post-']
+			width: $desktop/4

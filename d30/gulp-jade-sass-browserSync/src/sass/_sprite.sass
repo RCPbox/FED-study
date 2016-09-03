@@ -1,0 +1,820 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+
+  At the bottom of this section, we provide information about the spritesheet itself
+  $spritesheet: width height image $spritesheet-sprites
+  */
+$bg-shadow-01-name: 'bg-shadow-01'
+$bg-shadow-01-x: 0px
+$bg-shadow-01-y: 322px
+$bg-shadow-01-offset-x: 0px
+$bg-shadow-01-offset-y: -322px
+$bg-shadow-01-width: 900px
+$bg-shadow-01-height: 30px
+$bg-shadow-01-total-width: 900px
+$bg-shadow-01-total-height: 772px
+$bg-shadow-01-image: 'sprite.png'
+$bg-shadow-01: (0px, 322px, 0px, -322px, 900px, 30px, 900px, 772px, 'sprite.png', 'bg-shadow-01', )
+$bg-shadow-02-name: 'bg-shadow-02'
+$bg-shadow-02-x: 0px
+$bg-shadow-02-y: 0px
+$bg-shadow-02-offset-x: 0px
+$bg-shadow-02-offset-y: 0px
+$bg-shadow-02-width: 900px
+$bg-shadow-02-height: 60px
+$bg-shadow-02-total-width: 900px
+$bg-shadow-02-total-height: 772px
+$bg-shadow-02-image: 'sprite.png'
+$bg-shadow-02: (0px, 0px, 0px, 0px, 900px, 60px, 900px, 772px, 'sprite.png', 'bg-shadow-02', )
+$bg-shadow-03-name: 'bg-shadow-03'
+$bg-shadow-03-x: 0px
+$bg-shadow-03-y: 60px
+$bg-shadow-03-offset-x: 0px
+$bg-shadow-03-offset-y: -60px
+$bg-shadow-03-width: 900px
+$bg-shadow-03-height: 60px
+$bg-shadow-03-total-width: 900px
+$bg-shadow-03-total-height: 772px
+$bg-shadow-03-image: 'sprite.png'
+$bg-shadow-03: (0px, 60px, 0px, -60px, 900px, 60px, 900px, 772px, 'sprite.png', 'bg-shadow-03', )
+$footer-newsletter-gfx-name: 'footer-newsletter-gfx'
+$footer-newsletter-gfx-x: 0px
+$footer-newsletter-gfx-y: 481px
+$footer-newsletter-gfx-offset-x: 0px
+$footer-newsletter-gfx-offset-y: -481px
+$footer-newsletter-gfx-width: 113px
+$footer-newsletter-gfx-height: 147px
+$footer-newsletter-gfx-total-width: 900px
+$footer-newsletter-gfx-total-height: 772px
+$footer-newsletter-gfx-image: 'sprite.png'
+$footer-newsletter-gfx: (0px, 481px, 0px, -481px, 113px, 147px, 900px, 772px, 'sprite.png', 'footer-newsletter-gfx', )
+$footer-newsletter-store-locator-divider-name: 'footer-newsletter-store-locator-divider'
+$footer-newsletter-store-locator-divider-x: 0px
+$footer-newsletter-store-locator-divider-y: 628px
+$footer-newsletter-store-locator-divider-offset-x: 0px
+$footer-newsletter-store-locator-divider-offset-y: -628px
+$footer-newsletter-store-locator-divider-width: 1px
+$footer-newsletter-store-locator-divider-height: 144px
+$footer-newsletter-store-locator-divider-total-width: 900px
+$footer-newsletter-store-locator-divider-total-height: 772px
+$footer-newsletter-store-locator-divider-image: 'sprite.png'
+$footer-newsletter-store-locator-divider: (0px, 628px, 0px, -628px, 1px, 144px, 900px, 772px, 'sprite.png', 'footer-newsletter-store-locator-divider', )
+$footer-store-locator-gfx-name: 'footer-store-locator-gfx'
+$footer-store-locator-gfx-x: 201px
+$footer-store-locator-gfx-y: 120px
+$footer-store-locator-gfx-offset-x: -201px
+$footer-store-locator-gfx-offset-y: -120px
+$footer-store-locator-gfx-width: 201px
+$footer-store-locator-gfx-height: 147px
+$footer-store-locator-gfx-total-width: 900px
+$footer-store-locator-gfx-total-height: 772px
+$footer-store-locator-gfx-image: 'sprite.png'
+$footer-store-locator-gfx: (201px, 120px, -201px, -120px, 201px, 147px, 900px, 772px, 'sprite.png', 'footer-store-locator-gfx', )
+$icon-arrow-select-bottom-name: 'icon-arrow-select-bottom'
+$icon-arrow-select-bottom-x: 889px
+$icon-arrow-select-bottom-y: 193px
+$icon-arrow-select-bottom-offset-x: -889px
+$icon-arrow-select-bottom-offset-y: -193px
+$icon-arrow-select-bottom-width: 8px
+$icon-arrow-select-bottom-height: 6px
+$icon-arrow-select-bottom-total-width: 900px
+$icon-arrow-select-bottom-total-height: 772px
+$icon-arrow-select-bottom-image: 'sprite.png'
+$icon-arrow-select-bottom: (889px, 193px, -889px, -193px, 8px, 6px, 900px, 772px, 'sprite.png', 'icon-arrow-select-bottom', )
+$icon-arrow-select-right-name: 'icon-arrow-select-right'
+$icon-arrow-select-right-x: 889px
+$icon-arrow-select-right-y: 185px
+$icon-arrow-select-right-offset-x: -889px
+$icon-arrow-select-right-offset-y: -185px
+$icon-arrow-select-right-width: 8px
+$icon-arrow-select-right-height: 8px
+$icon-arrow-select-right-total-width: 900px
+$icon-arrow-select-right-total-height: 772px
+$icon-arrow-select-right-image: 'sprite.png'
+$icon-arrow-select-right: (889px, 185px, -889px, -185px, 8px, 8px, 900px, 772px, 'sprite.png', 'icon-arrow-select-right', )
+$icon-asc-arrow-name: 'icon-asc-arrow'
+$icon-asc-arrow-x: 893px
+$icon-asc-arrow-y: 120px
+$icon-asc-arrow-offset-x: -893px
+$icon-asc-arrow-offset-y: -120px
+$icon-asc-arrow-width: 7px
+$icon-asc-arrow-height: 10px
+$icon-asc-arrow-total-width: 900px
+$icon-asc-arrow-total-height: 772px
+$icon-asc-arrow-image: 'sprite.png'
+$icon-asc-arrow: (893px, 120px, -893px, -120px, 7px, 10px, 900px, 772px, 'sprite.png', 'icon-asc-arrow', )
+$icon-bag-name: 'icon-bag'
+$icon-bag-x: 540px
+$icon-bag-y: 218px
+$icon-bag-offset-x: -540px
+$icon-bag-offset-y: -218px
+$icon-bag-width: 46px
+$icon-bag-height: 46px
+$icon-bag-total-width: 900px
+$icon-bag-total-height: 772px
+$icon-bag-image: 'sprite.png'
+$icon-bag: (540px, 218px, -540px, -218px, 46px, 46px, 900px, 772px, 'sprite.png', 'icon-bag', )
+$icon-ball-name: 'icon-ball'
+$icon-ball-x: 402px
+$icon-ball-y: 218px
+$icon-ball-offset-x: -402px
+$icon-ball-offset-y: -218px
+$icon-ball-width: 46px
+$icon-ball-height: 46px
+$icon-ball-total-width: 900px
+$icon-ball-total-height: 772px
+$icon-ball-image: 'sprite.png'
+$icon-ball: (402px, 218px, -402px, -218px, 46px, 46px, 900px, 772px, 'sprite.png', 'icon-ball', )
+$icon-btn-close-active-name: 'icon-btn-close-active'
+$icon-btn-close-active-x: 783px
+$icon-btn-close-active-y: 218px
+$icon-btn-close-active-offset-x: -783px
+$icon-btn-close-active-offset-y: -218px
+$icon-btn-close-active-width: 30px
+$icon-btn-close-active-height: 30px
+$icon-btn-close-active-total-width: 900px
+$icon-btn-close-active-total-height: 772px
+$icon-btn-close-active-image: 'sprite.png'
+$icon-btn-close-active: (783px, 218px, -783px, -218px, 30px, 30px, 900px, 772px, 'sprite.png', 'icon-btn-close-active', )
+$icon-btn-close-bg-white-name: 'icon-btn-close-bg-white'
+$icon-btn-close-bg-white-x: 663px
+$icon-btn-close-bg-white-y: 267px
+$icon-btn-close-bg-white-offset-x: -663px
+$icon-btn-close-bg-white-offset-y: -267px
+$icon-btn-close-bg-white-width: 15px
+$icon-btn-close-bg-white-height: 15px
+$icon-btn-close-bg-white-total-width: 900px
+$icon-btn-close-bg-white-total-height: 772px
+$icon-btn-close-bg-white-image: 'sprite.png'
+$icon-btn-close-bg-white: (663px, 267px, -663px, -267px, 15px, 15px, 900px, 772px, 'sprite.png', 'icon-btn-close-bg-white', )
+$icon-btn-close-deactive-name: 'icon-btn-close-deactive'
+$icon-btn-close-deactive-x: 536px
+$icon-btn-close-deactive-y: 267px
+$icon-btn-close-deactive-offset-x: -536px
+$icon-btn-close-deactive-offset-y: -267px
+$icon-btn-close-deactive-width: 25px
+$icon-btn-close-deactive-height: 25px
+$icon-btn-close-deactive-total-width: 900px
+$icon-btn-close-deactive-total-height: 772px
+$icon-btn-close-deactive-image: 'sprite.png'
+$icon-btn-close-deactive: (536px, 267px, -536px, -267px, 25px, 25px, 900px, 772px, 'sprite.png', 'icon-btn-close-deactive', )
+$icon-btn-details-name: 'icon-btn-details'
+$icon-btn-details-x: 596px
+$icon-btn-details-y: 185px
+$icon-btn-details-offset-x: -596px
+$icon-btn-details-offset-y: -185px
+$icon-btn-details-width: 110px
+$icon-btn-details-height: 31px
+$icon-btn-details-total-width: 900px
+$icon-btn-details-total-height: 772px
+$icon-btn-details-image: 'sprite.png'
+$icon-btn-details: (596px, 185px, -596px, -185px, 110px, 31px, 900px, 772px, 'sprite.png', 'icon-btn-details', )
+$icon-btn-down-arrow-name: 'icon-btn-down-arrow'
+$icon-btn-down-arrow-x: 510px
+$icon-btn-down-arrow-y: 267px
+$icon-btn-down-arrow-offset-x: -510px
+$icon-btn-down-arrow-offset-y: -267px
+$icon-btn-down-arrow-width: 26px
+$icon-btn-down-arrow-height: 26px
+$icon-btn-down-arrow-total-width: 900px
+$icon-btn-down-arrow-total-height: 772px
+$icon-btn-down-arrow-image: 'sprite.png'
+$icon-btn-down-arrow: (510px, 267px, -510px, -267px, 26px, 26px, 900px, 772px, 'sprite.png', 'icon-btn-down-arrow', )
+$icon-btn-drag-name: 'icon-btn-drag'
+$icon-btn-drag-x: 298px
+$icon-btn-drag-y: 481px
+$icon-btn-drag-offset-x: -298px
+$icon-btn-drag-offset-y: -481px
+$icon-btn-drag-width: 42px
+$icon-btn-drag-height: 58px
+$icon-btn-drag-total-width: 900px
+$icon-btn-drag-total-height: 772px
+$icon-btn-drag-image: 'sprite.png'
+$icon-btn-drag: (298px, 481px, -298px, -481px, 42px, 58px, 900px, 772px, 'sprite.png', 'icon-btn-drag', )
+$icon-btn-event-name: 'icon-btn-event'
+$icon-btn-event-x: 596px
+$icon-btn-event-y: 120px
+$icon-btn-event-offset-x: -596px
+$icon-btn-event-offset-y: -120px
+$icon-btn-event-width: 235px
+$icon-btn-event-height: 65px
+$icon-btn-event-total-width: 900px
+$icon-btn-event-total-height: 772px
+$icon-btn-event-image: 'sprite.png'
+$icon-btn-event: (596px, 120px, -596px, -120px, 235px, 65px, 900px, 772px, 'sprite.png', 'icon-btn-event', )
+$icon-btn-price-high-name: 'icon-btn-price-high'
+$icon-btn-price-high-x: 849px
+$icon-btn-price-high-y: 218px
+$icon-btn-price-high-offset-x: -849px
+$icon-btn-price-high-offset-y: -218px
+$icon-btn-price-high-width: 20px
+$icon-btn-price-high-height: 20px
+$icon-btn-price-high-total-width: 900px
+$icon-btn-price-high-total-height: 772px
+$icon-btn-price-high-image: 'sprite.png'
+$icon-btn-price-high: (849px, 218px, -849px, -218px, 20px, 20px, 900px, 772px, 'sprite.png', 'icon-btn-price-high', )
+$icon-btn-price-low-name: 'icon-btn-price-low'
+$icon-btn-price-low-x: 869px
+$icon-btn-price-low-y: 218px
+$icon-btn-price-low-offset-x: -869px
+$icon-btn-price-low-offset-y: -218px
+$icon-btn-price-low-width: 20px
+$icon-btn-price-low-height: 20px
+$icon-btn-price-low-total-width: 900px
+$icon-btn-price-low-total-height: 772px
+$icon-btn-price-low-image: 'sprite.png'
+$icon-btn-price-low: (869px, 218px, -869px, -218px, 20px, 20px, 900px, 772px, 'sprite.png', 'icon-btn-price-low', )
+$icon-bus-name: 'icon-bus'
+$icon-bus-x: 790px
+$icon-bus-y: 352px
+$icon-bus-offset-x: -790px
+$icon-bus-offset-y: -352px
+$icon-bus-width: 82px
+$icon-bus-height: 82px
+$icon-bus-total-width: 900px
+$icon-bus-total-height: 772px
+$icon-bus-image: 'sprite.png'
+$icon-bus: (790px, 352px, -790px, -352px, 82px, 82px, 900px, 772px, 'sprite.png', 'icon-bus', )
+$icon-cart-bag-name: 'icon-cart-bag'
+$icon-cart-bag-x: 181px
+$icon-cart-bag-y: 481px
+$icon-cart-bag-offset-x: -181px
+$icon-cart-bag-offset-y: -481px
+$icon-cart-bag-width: 56px
+$icon-cart-bag-height: 67px
+$icon-cart-bag-total-width: 900px
+$icon-cart-bag-total-height: 772px
+$icon-cart-bag-image: 'sprite.png'
+$icon-cart-bag: (181px, 481px, -181px, -481px, 56px, 67px, 900px, 772px, 'sprite.png', 'icon-cart-bag', )
+$icon-cart-empty-name: 'icon-cart-empty'
+$icon-cart-empty-x: 483px
+$icon-cart-empty-y: 267px
+$icon-cart-empty-offset-x: -483px
+$icon-cart-empty-offset-y: -267px
+$icon-cart-empty-width: 27px
+$icon-cart-empty-height: 42px
+$icon-cart-empty-total-width: 900px
+$icon-cart-empty-total-height: 772px
+$icon-cart-empty-image: 'sprite.png'
+$icon-cart-empty: (483px, 267px, -483px, -267px, 27px, 42px, 900px, 772px, 'sprite.png', 'icon-cart-empty', )
+$icon-cart-full-name: 'icon-cart-full'
+$icon-cart-full-x: 456px
+$icon-cart-full-y: 267px
+$icon-cart-full-offset-x: -456px
+$icon-cart-full-offset-y: -267px
+$icon-cart-full-width: 27px
+$icon-cart-full-height: 42px
+$icon-cart-full-total-width: 900px
+$icon-cart-full-total-height: 772px
+$icon-cart-full-image: 'sprite.png'
+$icon-cart-full: (456px, 267px, -456px, -267px, 27px, 42px, 900px, 772px, 'sprite.png', 'icon-cart-full', )
+$icon-cash-name: 'icon-cash'
+$icon-cash-x: 616px
+$icon-cash-y: 267px
+$icon-cash-offset-x: -616px
+$icon-cash-offset-y: -267px
+$icon-cash-width: 16px
+$icon-cash-height: 16px
+$icon-cash-total-width: 900px
+$icon-cash-total-height: 772px
+$icon-cash-image: 'sprite.png'
+$icon-cash: (616px, 267px, -616px, -267px, 16px, 16px, 900px, 772px, 'sprite.png', 'icon-cash', )
+$icon-check-name: 'icon-check'
+$icon-check-x: 113px
+$icon-check-y: 481px
+$icon-check-offset-x: -113px
+$icon-check-offset-y: -481px
+$icon-check-width: 68px
+$icon-check-height: 68px
+$icon-check-total-width: 900px
+$icon-check-total-height: 772px
+$icon-check-image: 'sprite.png'
+$icon-check: (113px, 481px, -113px, -481px, 68px, 68px, 900px, 772px, 'sprite.png', 'icon-check', )
+$icon-coupon-name: 'icon-coupon'
+$icon-coupon-x: 859px
+$icon-coupon-y: 185px
+$icon-coupon-offset-x: -859px
+$icon-coupon-offset-y: -185px
+$icon-coupon-width: 30px
+$icon-coupon-height: 15px
+$icon-coupon-total-width: 900px
+$icon-coupon-total-height: 772px
+$icon-coupon-image: 'sprite.png'
+$icon-coupon: (859px, 185px, -859px, -185px, 30px, 15px, 900px, 772px, 'sprite.png', 'icon-coupon', )
+$icon-cs-center-name: 'icon-cs-center'
+$icon-cs-center-x: 738px
+$icon-cs-center-y: 185px
+$icon-cs-center-offset-x: -738px
+$icon-cs-center-offset-y: -185px
+$icon-cs-center-width: 31px
+$icon-cs-center-height: 31px
+$icon-cs-center-total-width: 900px
+$icon-cs-center-total-height: 772px
+$icon-cs-center-image: 'sprite.png'
+$icon-cs-center: (738px, 185px, -738px, -185px, 31px, 31px, 900px, 772px, 'sprite.png', 'icon-cs-center', )
+$icon-event-notice-name: 'icon-event-notice'
+$icon-event-notice-x: 706px
+$icon-event-notice-y: 185px
+$icon-event-notice-offset-x: -706px
+$icon-event-notice-offset-y: -185px
+$icon-event-notice-width: 32px
+$icon-event-notice-height: 31px
+$icon-event-notice-total-width: 900px
+$icon-event-notice-total-height: 772px
+$icon-event-notice-image: 'sprite.png'
+$icon-event-notice: (706px, 185px, -706px, -185px, 32px, 31px, 900px, 772px, 'sprite.png', 'icon-event-notice', )
+$icon-event-red-name: 'icon-event-red'
+$icon-event-red-x: 814px
+$icon-event-red-y: 185px
+$icon-event-red-offset-x: -814px
+$icon-event-red-offset-y: -185px
+$icon-event-red-width: 45px
+$icon-event-red-height: 20px
+$icon-event-red-total-width: 900px
+$icon-event-red-total-height: 772px
+$icon-event-red-image: 'sprite.png'
+$icon-event-red: (814px, 185px, -814px, -185px, 45px, 20px, 900px, 772px, 'sprite.png', 'icon-event-red', )
+$icon-faq-answer-name: 'icon-faq-answer'
+$icon-faq-answer-x: 599px
+$icon-faq-answer-y: 267px
+$icon-faq-answer-offset-x: -599px
+$icon-faq-answer-offset-y: -267px
+$icon-faq-answer-width: 17px
+$icon-faq-answer-height: 16px
+$icon-faq-answer-total-width: 900px
+$icon-faq-answer-total-height: 772px
+$icon-faq-answer-image: 'sprite.png'
+$icon-faq-answer: (599px, 267px, -599px, -267px, 17px, 16px, 900px, 772px, 'sprite.png', 'icon-faq-answer', )
+$icon-faq-question-name: 'icon-faq-question'
+$icon-faq-question-x: 582px
+$icon-faq-question-y: 267px
+$icon-faq-question-offset-x: -582px
+$icon-faq-question-offset-y: -267px
+$icon-faq-question-width: 17px
+$icon-faq-question-height: 16px
+$icon-faq-question-total-width: 900px
+$icon-faq-question-total-height: 772px
+$icon-faq-question-image: 'sprite.png'
+$icon-faq-question: (582px, 267px, -582px, -267px, 17px, 16px, 900px, 772px, 'sprite.png', 'icon-faq-question', )
+$icon-faq-name: 'icon-faq'
+$icon-faq-x: 831px
+$icon-faq-y: 120px
+$icon-faq-offset-x: -831px
+$icon-faq-offset-y: -120px
+$icon-faq-width: 62px
+$icon-faq-height: 61px
+$icon-faq-total-width: 900px
+$icon-faq-total-height: 772px
+$icon-faq-image: 'sprite.png'
+$icon-faq: (831px, 120px, -831px, -120px, 62px, 61px, 900px, 772px, 'sprite.png', 'icon-faq', )
+$icon-flag-korea-name: 'icon-flag-korea'
+$icon-flag-korea-x: 632px
+$icon-flag-korea-y: 267px
+$icon-flag-korea-offset-x: -632px
+$icon-flag-korea-offset-y: -267px
+$icon-flag-korea-width: 16px
+$icon-flag-korea-height: 16px
+$icon-flag-korea-total-width: 900px
+$icon-flag-korea-total-height: 772px
+$icon-flag-korea-image: 'sprite.png'
+$icon-flag-korea: (632px, 267px, -632px, -267px, 16px, 16px, 900px, 772px, 'sprite.png', 'icon-flag-korea', )
+$icon-flag-rus-name: 'icon-flag-rus'
+$icon-flag-rus-x: 769px
+$icon-flag-rus-y: 205px
+$icon-flag-rus-offset-x: -769px
+$icon-flag-rus-offset-y: -205px
+$icon-flag-rus-width: 16px
+$icon-flag-rus-height: 11px
+$icon-flag-rus-total-width: 900px
+$icon-flag-rus-total-height: 772px
+$icon-flag-rus-image: 'sprite.png'
+$icon-flag-rus: (769px, 205px, -769px, -205px, 16px, 11px, 900px, 772px, 'sprite.png', 'icon-flag-rus', )
+$icon-global-name: 'icon-global'
+$icon-global-x: 813px
+$icon-global-y: 218px
+$icon-global-offset-x: -813px
+$icon-global-offset-y: -218px
+$icon-global-width: 36px
+$icon-global-height: 24px
+$icon-global-total-width: 900px
+$icon-global-total-height: 772px
+$icon-global-image: 'sprite.png'
+$icon-global: (813px, 218px, -813px, -218px, 36px, 24px, 900px, 772px, 'sprite.png', 'icon-global', )
+$icon-ipin-join-name: 'icon-ipin-join'
+$icon-ipin-join-x: 255px
+$icon-ipin-join-y: 352px
+$icon-ipin-join-offset-x: -255px
+$icon-ipin-join-offset-y: -352px
+$icon-ipin-join-width: 122px
+$icon-ipin-join-height: 122px
+$icon-ipin-join-total-width: 900px
+$icon-ipin-join-total-height: 772px
+$icon-ipin-join-image: 'sprite.png'
+$icon-ipin-join: (255px, 352px, -255px, -352px, 122px, 122px, 900px, 772px, 'sprite.png', 'icon-ipin-join', )
+$icon-lock-active-name: 'icon-lock-active'
+$icon-lock-active-x: 133px
+$icon-lock-active-y: 352px
+$icon-lock-active-offset-x: -133px
+$icon-lock-active-offset-y: -352px
+$icon-lock-active-width: 122px
+$icon-lock-active-height: 122px
+$icon-lock-active-total-width: 900px
+$icon-lock-active-total-height: 772px
+$icon-lock-active-image: 'sprite.png'
+$icon-lock-active: (133px, 352px, -133px, -352px, 122px, 122px, 900px, 772px, 'sprite.png', 'icon-lock-active', )
+$icon-lock-deactive-name: 'icon-lock-deactive'
+$icon-lock-deactive-x: 0px
+$icon-lock-deactive-y: 120px
+$icon-lock-deactive-offset-x: 0px
+$icon-lock-deactive-offset-y: -120px
+$icon-lock-deactive-width: 201px
+$icon-lock-deactive-height: 202px
+$icon-lock-deactive-total-width: 900px
+$icon-lock-deactive-total-height: 772px
+$icon-lock-deactive-image: 'sprite.png'
+$icon-lock-deactive: (0px, 120px, 0px, -120px, 201px, 202px, 900px, 772px, 'sprite.png', 'icon-lock-deactive', )
+$icon-main-play-name: 'icon-main-play'
+$icon-main-play-x: 237px
+$icon-main-play-y: 481px
+$icon-main-play-offset-x: -237px
+$icon-main-play-offset-y: -481px
+$icon-main-play-width: 61px
+$icon-main-play-height: 61px
+$icon-main-play-total-width: 900px
+$icon-main-play-total-height: 772px
+$icon-main-play-image: 'sprite.png'
+$icon-main-play: (237px, 481px, -237px, -481px, 61px, 61px, 900px, 772px, 'sprite.png', 'icon-main-play', )
+$icon-map-name: 'icon-map'
+$icon-map-x: 0px
+$icon-map-y: 352px
+$icon-map-offset-x: 0px
+$icon-map-offset-y: -352px
+$icon-map-width: 133px
+$icon-map-height: 129px
+$icon-map-total-width: 900px
+$icon-map-total-height: 772px
+$icon-map-image: 'sprite.png'
+$icon-map: (0px, 352px, 0px, -352px, 133px, 129px, 900px, 772px, 'sprite.png', 'icon-map', )
+$icon-new-black-name: 'icon-new-black'
+$icon-new-black-x: 769px
+$icon-new-black-y: 185px
+$icon-new-black-offset-x: -769px
+$icon-new-black-offset-y: -185px
+$icon-new-black-width: 45px
+$icon-new-black-height: 20px
+$icon-new-black-total-width: 900px
+$icon-new-black-total-height: 772px
+$icon-new-black-image: 'sprite.png'
+$icon-new-black: (769px, 185px, -769px, -185px, 45px, 20px, 900px, 772px, 'sprite.png', 'icon-new-black', )
+$icon-nocheck-join-name: 'icon-nocheck-join'
+$icon-nocheck-join-x: 499px
+$icon-nocheck-join-y: 352px
+$icon-nocheck-join-offset-x: -499px
+$icon-nocheck-join-offset-y: -352px
+$icon-nocheck-join-width: 122px
+$icon-nocheck-join-height: 122px
+$icon-nocheck-join-total-width: 900px
+$icon-nocheck-join-total-height: 772px
+$icon-nocheck-join-image: 'sprite.png'
+$icon-nocheck-join: (499px, 352px, -499px, -352px, 122px, 122px, 900px, 772px, 'sprite.png', 'icon-nocheck-join', )
+$icon-phone-join-name: 'icon-phone-join'
+$icon-phone-join-x: 377px
+$icon-phone-join-y: 352px
+$icon-phone-join-offset-x: -377px
+$icon-phone-join-offset-y: -352px
+$icon-phone-join-width: 122px
+$icon-phone-join-height: 122px
+$icon-phone-join-total-width: 900px
+$icon-phone-join-total-height: 772px
+$icon-phone-join-image: 'sprite.png'
+$icon-phone-join: (377px, 352px, -377px, -352px, 122px, 122px, 900px, 772px, 'sprite.png', 'icon-phone-join', )
+$icon-phone-name: 'icon-phone'
+$icon-phone-x: 586px
+$icon-phone-y: 218px
+$icon-phone-offset-x: -586px
+$icon-phone-offset-y: -218px
+$icon-phone-width: 43px
+$icon-phone-height: 46px
+$icon-phone-total-width: 900px
+$icon-phone-total-height: 772px
+$icon-phone-image: 'sprite.png'
+$icon-phone: (586px, 218px, -586px, -218px, 43px, 46px, 900px, 772px, 'sprite.png', 'icon-phone', )
+$icon-puma-animal-name: 'icon-puma-animal'
+$icon-puma-animal-x: 621px
+$icon-puma-animal-y: 352px
+$icon-puma-animal-offset-x: -621px
+$icon-puma-animal-offset-y: -352px
+$icon-puma-animal-width: 87px
+$icon-puma-animal-height: 104px
+$icon-puma-animal-total-width: 900px
+$icon-puma-animal-total-height: 772px
+$icon-puma-animal-image: 'sprite.png'
+$icon-puma-animal: (621px, 352px, -621px, -352px, 87px, 104px, 900px, 772px, 'sprite.png', 'icon-puma-animal', )
+$icon-puma-black-name: 'icon-puma-black'
+$icon-puma-black-x: 303px
+$icon-puma-black-y: 267px
+$icon-puma-black-offset-x: -303px
+$icon-puma-black-offset-y: -267px
+$icon-puma-black-width: 51px
+$icon-puma-black-height: 50px
+$icon-puma-black-total-width: 900px
+$icon-puma-black-total-height: 772px
+$icon-puma-black-image: 'sprite.png'
+$icon-puma-black: (303px, 267px, -303px, -267px, 51px, 50px, 900px, 772px, 'sprite.png', 'icon-puma-black', )
+$icon-puma-gold-name: 'icon-puma-gold'
+$icon-puma-gold-x: 405px
+$icon-puma-gold-y: 267px
+$icon-puma-gold-offset-x: -405px
+$icon-puma-gold-offset-y: -267px
+$icon-puma-gold-width: 51px
+$icon-puma-gold-height: 50px
+$icon-puma-gold-total-width: 900px
+$icon-puma-gold-total-height: 772px
+$icon-puma-gold-image: 'sprite.png'
+$icon-puma-gold: (405px, 267px, -405px, -267px, 51px, 50px, 900px, 772px, 'sprite.png', 'icon-puma-gold', )
+$icon-puma-logo-name: 'icon-puma-logo'
+$icon-puma-logo-x: 402px
+$icon-puma-logo-y: 120px
+$icon-puma-logo-offset-x: -402px
+$icon-puma-logo-offset-y: -120px
+$icon-puma-logo-width: 194px
+$icon-puma-logo-height: 98px
+$icon-puma-logo-total-width: 900px
+$icon-puma-logo-total-height: 772px
+$icon-puma-logo-image: 'sprite.png'
+$icon-puma-logo: (402px, 120px, -402px, -120px, 194px, 98px, 900px, 772px, 'sprite.png', 'icon-puma-logo', )
+$icon-puma-platinum-name: 'icon-puma-platinum'
+$icon-puma-platinum-x: 201px
+$icon-puma-platinum-y: 267px
+$icon-puma-platinum-offset-x: -201px
+$icon-puma-platinum-offset-y: -267px
+$icon-puma-platinum-width: 51px
+$icon-puma-platinum-height: 50px
+$icon-puma-platinum-total-width: 900px
+$icon-puma-platinum-total-height: 772px
+$icon-puma-platinum-image: 'sprite.png'
+$icon-puma-platinum: (201px, 267px, -201px, -267px, 51px, 50px, 900px, 772px, 'sprite.png', 'icon-puma-platinum', )
+$icon-puma-red-name: 'icon-puma-red'
+$icon-puma-red-x: 354px
+$icon-puma-red-y: 267px
+$icon-puma-red-offset-x: -354px
+$icon-puma-red-offset-y: -267px
+$icon-puma-red-width: 51px
+$icon-puma-red-height: 50px
+$icon-puma-red-total-width: 900px
+$icon-puma-red-total-height: 772px
+$icon-puma-red-image: 'sprite.png'
+$icon-puma-red: (354px, 267px, -354px, -267px, 51px, 50px, 900px, 772px, 'sprite.png', 'icon-puma-red', )
+$icon-puma-silver-name: 'icon-puma-silver'
+$icon-puma-silver-x: 252px
+$icon-puma-silver-y: 267px
+$icon-puma-silver-offset-x: -252px
+$icon-puma-silver-offset-y: -267px
+$icon-puma-silver-width: 51px
+$icon-puma-silver-height: 50px
+$icon-puma-silver-total-width: 900px
+$icon-puma-silver-total-height: 772px
+$icon-puma-silver-image: 'sprite.png'
+$icon-puma-silver: (252px, 267px, -252px, -267px, 51px, 50px, 900px, 772px, 'sprite.png', 'icon-puma-silver', )
+$icon-search-name: 'icon-search'
+$icon-search-x: 678px
+$icon-search-y: 267px
+$icon-search-offset-x: -678px
+$icon-search-offset-y: -267px
+$icon-search-width: 12px
+$icon-search-height: 14px
+$icon-search-total-width: 900px
+$icon-search-total-height: 772px
+$icon-search-image: 'sprite.png'
+$icon-search: (678px, 267px, -678px, -267px, 12px, 14px, 900px, 772px, 'sprite.png', 'icon-search', )
+$icon-shoes-name: 'icon-shoes'
+$icon-shoes-x: 494px
+$icon-shoes-y: 218px
+$icon-shoes-offset-x: -494px
+$icon-shoes-offset-y: -218px
+$icon-shoes-width: 46px
+$icon-shoes-height: 46px
+$icon-shoes-total-width: 900px
+$icon-shoes-total-height: 772px
+$icon-shoes-image: 'sprite.png'
+$icon-shoes: (494px, 218px, -494px, -218px, 46px, 46px, 900px, 772px, 'sprite.png', 'icon-shoes', )
+$icon-sidebar-active-name: 'icon-sidebar-active'
+$icon-sidebar-active-x: 872px
+$icon-sidebar-active-y: 352px
+$icon-sidebar-active-offset-x: -872px
+$icon-sidebar-active-offset-y: -352px
+$icon-sidebar-active-width: 24px
+$icon-sidebar-active-height: 52px
+$icon-sidebar-active-total-width: 900px
+$icon-sidebar-active-total-height: 772px
+$icon-sidebar-active-image: 'sprite.png'
+$icon-sidebar-active: (872px, 352px, -872px, -352px, 24px, 52px, 900px, 772px, 'sprite.png', 'icon-sidebar-active', )
+$icon-slidebar-deactive-name: 'icon-slidebar-deactive'
+$icon-slidebar-deactive-x: 340px
+$icon-slidebar-deactive-y: 481px
+$icon-slidebar-deactive-offset-x: -340px
+$icon-slidebar-deactive-offset-y: -481px
+$icon-slidebar-deactive-width: 24px
+$icon-slidebar-deactive-height: 52px
+$icon-slidebar-deactive-total-width: 900px
+$icon-slidebar-deactive-total-height: 772px
+$icon-slidebar-deactive-image: 'sprite.png'
+$icon-slidebar-deactive: (340px, 481px, -340px, -481px, 24px, 52px, 900px, 772px, 'sprite.png', 'icon-slidebar-deactive', )
+$icon-slider-nav-left-name: 'icon-slider-nav-left'
+$icon-slider-nav-left-x: 146px
+$icon-slider-nav-left-y: 549px
+$icon-slider-nav-left-offset-x: -146px
+$icon-slider-nav-left-offset-y: -549px
+$icon-slider-nav-left-width: 33px
+$icon-slider-nav-left-height: 61px
+$icon-slider-nav-left-total-width: 900px
+$icon-slider-nav-left-total-height: 772px
+$icon-slider-nav-left-image: 'sprite.png'
+$icon-slider-nav-left: (146px, 549px, -146px, -549px, 33px, 61px, 900px, 772px, 'sprite.png', 'icon-slider-nav-left', )
+$icon-slider-nav-right-name: 'icon-slider-nav-right'
+$icon-slider-nav-right-x: 113px
+$icon-slider-nav-right-y: 549px
+$icon-slider-nav-right-offset-x: -113px
+$icon-slider-nav-right-offset-y: -549px
+$icon-slider-nav-right-width: 33px
+$icon-slider-nav-right-height: 61px
+$icon-slider-nav-right-total-width: 900px
+$icon-slider-nav-right-total-height: 772px
+$icon-slider-nav-right-image: 'sprite.png'
+$icon-slider-nav-right: (113px, 549px, -113px, -549px, 33px, 61px, 900px, 772px, 'sprite.png', 'icon-slider-nav-right', )
+$icon-social-blog-name: 'icon-social-blog'
+$icon-social-blog-x: 668px
+$icon-social-blog-y: 218px
+$icon-social-blog-offset-x: -668px
+$icon-social-blog-offset-y: -218px
+$icon-social-blog-width: 39px
+$icon-social-blog-height: 36px
+$icon-social-blog-total-width: 900px
+$icon-social-blog-total-height: 772px
+$icon-social-blog-image: 'sprite.png'
+$icon-social-blog: (668px, 218px, -668px, -218px, 39px, 36px, 900px, 772px, 'sprite.png', 'icon-social-blog', )
+$icon-social-facebook-name: 'icon-social-facebook'
+$icon-social-facebook-x: 707px
+$icon-social-facebook-y: 218px
+$icon-social-facebook-offset-x: -707px
+$icon-social-facebook-offset-y: -218px
+$icon-social-facebook-width: 38px
+$icon-social-facebook-height: 36px
+$icon-social-facebook-total-width: 900px
+$icon-social-facebook-total-height: 772px
+$icon-social-facebook-image: 'sprite.png'
+$icon-social-facebook: (707px, 218px, -707px, -218px, 38px, 36px, 900px, 772px, 'sprite.png', 'icon-social-facebook', )
+$icon-social-kakaostory-name: 'icon-social-kakaostory'
+$icon-social-kakaostory-x: 629px
+$icon-social-kakaostory-y: 218px
+$icon-social-kakaostory-offset-x: -629px
+$icon-social-kakaostory-offset-y: -218px
+$icon-social-kakaostory-width: 39px
+$icon-social-kakaostory-height: 36px
+$icon-social-kakaostory-total-width: 900px
+$icon-social-kakaostory-total-height: 772px
+$icon-social-kakaostory-image: 'sprite.png'
+$icon-social-kakaostory: (629px, 218px, -629px, -218px, 39px, 36px, 900px, 772px, 'sprite.png', 'icon-social-kakaostory', )
+$icon-social-youtube-name: 'icon-social-youtube'
+$icon-social-youtube-x: 745px
+$icon-social-youtube-y: 218px
+$icon-social-youtube-offset-x: -745px
+$icon-social-youtube-offset-y: -218px
+$icon-social-youtube-width: 38px
+$icon-social-youtube-height: 36px
+$icon-social-youtube-total-width: 900px
+$icon-social-youtube-total-height: 772px
+$icon-social-youtube-image: 'sprite.png'
+$icon-social-youtube: (745px, 218px, -745px, -218px, 38px, 36px, 900px, 772px, 'sprite.png', 'icon-social-youtube', )
+$icon-success-check-name: 'icon-success-check'
+$icon-success-check-x: 648px
+$icon-success-check-y: 267px
+$icon-success-check-offset-x: -648px
+$icon-success-check-offset-y: -267px
+$icon-success-check-width: 15px
+$icon-success-check-height: 16px
+$icon-success-check-total-width: 900px
+$icon-success-check-total-height: 772px
+$icon-success-check-image: 'sprite.png'
+$icon-success-check: (648px, 267px, -648px, -267px, 15px, 16px, 900px, 772px, 'sprite.png', 'icon-success-check', )
+$icon-swimsuit-name: 'icon-swimsuit'
+$icon-swimsuit-x: 448px
+$icon-swimsuit-y: 218px
+$icon-swimsuit-offset-x: -448px
+$icon-swimsuit-offset-y: -218px
+$icon-swimsuit-width: 46px
+$icon-swimsuit-height: 46px
+$icon-swimsuit-total-width: 900px
+$icon-swimsuit-total-height: 772px
+$icon-swimsuit-image: 'sprite.png'
+$icon-swimsuit: (448px, 218px, -448px, -218px, 46px, 46px, 900px, 772px, 'sprite.png', 'icon-swimsuit', )
+$icon-train-name: 'icon-train'
+$icon-train-x: 708px
+$icon-train-y: 352px
+$icon-train-offset-x: -708px
+$icon-train-offset-y: -352px
+$icon-train-width: 82px
+$icon-train-height: 82px
+$icon-train-total-width: 900px
+$icon-train-total-height: 772px
+$icon-train-image: 'sprite.png'
+$icon-train: (708px, 352px, -708px, -352px, 82px, 82px, 900px, 772px, 'sprite.png', 'icon-train', )
+$icon-wish02-name: 'icon-wish02'
+$icon-wish02-x: 561px
+$icon-wish02-y: 267px
+$icon-wish02-offset-x: -561px
+$icon-wish02-offset-y: -267px
+$icon-wish02-width: 21px
+$icon-wish02-height: 17px
+$icon-wish02-total-width: 900px
+$icon-wish02-total-height: 772px
+$icon-wish02-image: 'sprite.png'
+$icon-wish02: (561px, 267px, -561px, -267px, 21px, 17px, 900px, 772px, 'sprite.png', 'icon-wish02', )
+$slider-nav-button-deselected-name: 'slider-nav-button-deselected'
+$slider-nav-button-deselected-x: 872px
+$slider-nav-button-deselected-y: 404px
+$slider-nav-button-deselected-offset-x: -872px
+$slider-nav-button-deselected-offset-y: -404px
+$slider-nav-button-deselected-width: 18px
+$slider-nav-button-deselected-height: 18px
+$slider-nav-button-deselected-total-width: 900px
+$slider-nav-button-deselected-total-height: 772px
+$slider-nav-button-deselected-image: 'sprite.png'
+$slider-nav-button-deselected: (872px, 404px, -872px, -404px, 18px, 18px, 900px, 772px, 'sprite.png', 'slider-nav-button-deselected', )
+$slider-nav-button-selected-name: 'slider-nav-button-selected'
+$slider-nav-button-selected-x: 708px
+$slider-nav-button-selected-y: 434px
+$slider-nav-button-selected-offset-x: -708px
+$slider-nav-button-selected-offset-y: -434px
+$slider-nav-button-selected-width: 18px
+$slider-nav-button-selected-height: 18px
+$slider-nav-button-selected-total-width: 900px
+$slider-nav-button-selected-total-height: 772px
+$slider-nav-button-selected-image: 'sprite.png'
+$slider-nav-button-selected: (708px, 434px, -708px, -434px, 18px, 18px, 900px, 772px, 'sprite.png', 'slider-nav-button-selected', )
+$spritesheet-width: 900px
+$spritesheet-height: 772px
+$spritesheet-image: 'sprite.png'
+$spritesheet-sprites: ($bg-shadow-01, $bg-shadow-02, $bg-shadow-03, $footer-newsletter-gfx, $footer-newsletter-store-locator-divider, $footer-store-locator-gfx, $icon-arrow-select-bottom, $icon-arrow-select-right, $icon-asc-arrow, $icon-bag, $icon-ball, $icon-btn-close-active, $icon-btn-close-bg-white, $icon-btn-close-deactive, $icon-btn-details, $icon-btn-down-arrow, $icon-btn-drag, $icon-btn-event, $icon-btn-price-high, $icon-btn-price-low, $icon-bus, $icon-cart-bag, $icon-cart-empty, $icon-cart-full, $icon-cash, $icon-check, $icon-coupon, $icon-cs-center, $icon-event-notice, $icon-event-red, $icon-faq-answer, $icon-faq-question, $icon-faq, $icon-flag-korea, $icon-flag-rus, $icon-global, $icon-ipin-join, $icon-lock-active, $icon-lock-deactive, $icon-main-play, $icon-map, $icon-new-black, $icon-nocheck-join, $icon-phone-join, $icon-phone, $icon-puma-animal, $icon-puma-black, $icon-puma-gold, $icon-puma-logo, $icon-puma-platinum, $icon-puma-red, $icon-puma-silver, $icon-search, $icon-shoes, $icon-sidebar-active, $icon-slidebar-deactive, $icon-slider-nav-left, $icon-slider-nav-right, $icon-social-blog, $icon-social-facebook, $icon-social-kakaostory, $icon-social-youtube, $icon-success-check, $icon-swimsuit, $icon-train, $icon-wish02, $slider-nav-button-deselected, $slider-nav-button-selected, )
+$spritesheet: (900px, 772px, 'sprite.png', $spritesheet-sprites, )
+
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+
+  Example usage in HTML:
+    `display: block` sprite:
+    <div class="icon-home"></div>
+
+  To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+    // CSS
+    .icon {
+      display: inline-block;
+    }
+
+    // HTML
+    <i class="icon icon-home"></i>
+  */
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+/*
+  The `sprites` mixin generates identical output to the CSS template
+    but can be overridden inside of SASS
+
+  @include sprites($spritesheet-sprites)
+  */
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)

@@ -1,0 +1,45 @@
+extends part/_page_template
+
+//- block main
+	//- a11y-hidden
+	//- a.readable-content(href="/") hi, there
+
+	//- main
+	//- 	p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+	//- 	p Hic, maiores quas ad rem accusamus vel facere?
+	//- 	p Tempore voluptatum quia accusamus. Aspernatur quibusdam, dolor cum.
+	//- 	p Ratione eum explicabo voluptates omnis eligendi quibusdam quasi.
+	//- 	p Temporibus dolores, iusto aliquid assumenda porro officia sequi.
+	//- 	p Perferendis itaque amet, aspernatur facere hic, nisi blanditiis!
+	//- 	p Iure dolore nobis possimus incidunt unde id repudiandae.
+	//- 	p Inventore, itaque aspernatur, iusto tempore vero adipisci laudantium.
+
+	#bus
+		|icon-bus
+	#ball
+		|icon-ball
+	#btn-drag
+	#cart-bag
+	#bag
+
+block header
+	header#page-header(role="banner")
+		h1 Page Header
+
+block gnb
+	nav#gnb(role="navigation")
+		h2 Global NavigationBar
+
+block main
+	main#page-main(role="main")
+		h2 Main Contents
+		.news
+			h3 news
+		.showcase
+			h4 showcase
+
+block footer
+	footer#page-footer(role="contentinfo")
+		h3 Page Footer
+
+

@@ -1,0 +1,86 @@
+//
+ * --------------------------------
+ * Sass Framework 
+ * 	- Compass
+ * Sass Library
+ * 	= Bourbon
+ * --------------------------------
+@import bourbon
+@import compass/utilities/sprites
+
+//
+ * --------------------------------
+ * 스프라이트 이미지 레이아웃, 간격 설정
+ * ${디렉토리_이름}-spacing: 10px
+ * ${디렉토리_이름}-layout: vertical, horizontal, diagonal, smart
+
+$one-spacing: 10px
+$one-layout: smart
+
+//
+ * --------------------------------
+ * Compass 스프라이트 이미지 자동 생성
+ * --------------------------------
+@import "one/*.png"
+// images는 등록되어 있으니 one 폴더내의 모든 png 파일 선택.
+
+
+// css 코드 생성. 포지션 값만 나오고 사이즈 값이 나오지 않는다.
+// +all-one-sprites
+
+
+// $sprite-images: icon-bus icon-ball icon-puma-logo
+//
+// @each $image-name in $sprite-images
+// 	.#{$image-name}
+// 		// 포지션 값
+// 		+one-sprite($image-name)
+// 		// 사이즈
+// 		width: one-sprite-width($image-name)
+// 		height: one-sprite-height($image-name)
+// 단점: 리스트로 파일명 일일이 다 쓸건가???
+
+
+// 스프라이트 만드는데 도움이 되는 헬퍼함수.
+// http://compass-style.org/reference/compass/helpers/sprites/
+
+// 스프라이트 맵 만들기
+$sprites-map: sprite-map('one/*.png')
+// @debug type-of($sprites-map)//compass::sassextensions::sprites::spritemap
+
+// 스프라이트 맵에서 이름 출력하기
+$sprite-image-names: sprite-names($sprites-map)
+// @debug type-of($sprite-image-names)//list
+// @debug $sprite-image-names //bg-shadow-01, bg-shadow-02, bg-shadow-03 ...
+
+
+// 출력된 이름을 반복하여 코드 자동 생성
+@each $image-name in $sprite-image-names
+	%#{$image-name}
+		+one-sprite($image-name)
+		width: one-sprite-width($image-name)
+		height: one-sprite-height($image-name)
+
+
+// ir기법 http://darum.daum.net/convention/css/css_ir
+// Phark Method 방식
+
+%ir
+	overflow: hidden
+	text-indent: -9999em
+
+// #bus
+// 	@extend %ir
+// 	@extend %icon-bus
+
+// #ball
+// 	@extend %ir
+// 	@extend %icon-ball
+
+@each $image-name in bus, ball, btn-drag, cart-bag, bag
+	##{$image-name}
+		@extend %ir
+		@extend %icon-#{$image-name}
+
+// 클래스 쓰지 않고도 적용이 가능.
+

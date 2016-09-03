@@ -1,0 +1,29 @@
+//
+ * --------------------------------
+ * Sass Framework 
+ * 	- Compass
+ * 
+ * Sass Library
+ * 	= Bourbon
+ *
+ *  Grid Framework
+ *  - Susy
+ * --------------------------------
+@import part/config
+
+//
+ * --------------------------------
+ * 사용자 정의 스타일링 디자인
+ * --------------------------------
+
+body
+	margin: 0
+
+#page
+	width: 820px
+	margin-left: auto
+	margin-right: auto
+	
+	// compass 사용
+	#{headings()}
+		+margin(0 null)

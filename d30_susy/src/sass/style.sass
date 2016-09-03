@@ -1,0 +1,79 @@
+//
+ * --------------------------------
+ * Sass Framework
+ *  - Compass
+ *
+ * Sass Library
+ * 	= Bourbon
+ *
+ * Grid Framework
+ *  - Susy
+ * --------------------------------
+@import part/config
+
+//
+ * --------------------------------
+ * 사용자 정의 스타일링 디자인
+ * --------------------------------
+body
+	margin: 0
+
+#page
+	// width: 820px
+	// margin-left: auto
+	// margin-right: auto
+	// susy mixin
+	// +container(80% 12 1.2 split show)
+	//자동으로 플롯팅된 애들을 감싸기 위해서 클리어픽스 적용.
+	
+	// split 양쪽에 거터를 주는거고 
+	// 기본은 after  margin-right만 있는것. before는 margin-left만 
+	// inside는 padding을 쓰게 된다. 그래서 간격이 없어지게 된다.
+	//-----------------------------------------------
+
+	// 2개의 컬럼, 기본1/4 컬럼사이즈?, 보여주기.
+	+container(2 1/12 split show)
+	height: 100vh
+
+	// compass 사용
+	#{headings()}
+		// bourbon mixin
+		+margin(0 null)
+
+// 컨테이너 내부에 있는 요소는 디자인할때 span을 사용하게 된다.
+// 그전에 색을 채워본다.
+#page-header
+	+span(full)
+	height: $susy-gap * 8
+	background: rgba(#DAC494, .75)
+	color: darken(#DAC494, 35%)
+
+#gnb
+	height: $susy-gap * 3
+	background: rgba(#D47997, .75)
+	color: darken(#D47997, 35%)
+
+#page-main
+	height: $susy-gap * 25
+	background: rgba(#B4CE66, .75)
+	color: darken(#B4CE66, 35%)
+
+	.news, .showcase
+		height: $susy-gap * 16
+
+	.news
+		+span(1 of 2 1/12)
+		background: rgba(#57C6AA, .75)
+		color: darken(#57C6AA, 35%)
+
+	.showcase
+		// at은 장소 지역을 나타내는 전치사. 
+		// 1 컬럼을 가지는데 2번째 위치에 있게해라
+		+span(1 at 2 of 2 1/12)
+		background: rgba(#7045CF, .75)
+		color: darken(#7045CF, 35%)
+
+#page-footer
+	height: $susy-gap * 5
+	background: rgba(#57C5B4, .75)
+	color: darken(#57C5B4, 35%)

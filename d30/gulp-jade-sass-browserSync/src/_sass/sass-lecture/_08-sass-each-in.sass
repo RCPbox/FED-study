@@ -1,0 +1,55 @@
+@charset 'UTF-8'
+
+// * --------------------------------
+// * @each ~ in [list, map]
+// * --------------------------------
+$sans-fonts: 'Nanum Gothic', verdana, arial, helvetica, Dotum // list
+$buttons: play pause stop next prev forward backword mute
+
+// 아이콘의 경우 width height 가 필요.
+$icons-map: (arrow-top: 22px 22px, arrow-right: 22px 22px, arrow-bottom: 22px 22px, arrow-left: 22px 22px, bag: 124px 78px, ball: 52px 52px)
+// @each $var in $buttons
+// 	// @debug $var
+// 	.#{$var}
+// 		content: $var
+// 		background: url(../images/buttons/#{$var}.png)
+
+
+// map 활용
+=makeIcons ($map, $image-path: '../images/icons', $extension: 'png')
+	// @each $item in $map
+		// @debug type-of($item) // list
+		//each 문에 map을 던지면 key: value 가 하나의 리스트로 들어 온다.
+
+		// $icon: nth($item, 1)
+		// $value: nth($item, 2)
+		// @debug $icon // arrow-top  arrow-right ...
+		// @debug $value // 22px 22px  22px 22px   ...
+
+		// key      value
+	@each $icon, $dimension in $map
+		$width: nth($dimension, 1)
+		$height: nth($dimension, 2)
+		.icon-#{icon}
+			background: url('#{$image-path}/#{icon}.#{$extension}')
+			width: $width
+			height: $height
+
+
++makeIcons($icons-map)
+
+
+
+// list 활용
+=makeButtons($buttons, $image-path: '../images/buttons', $suffix: '-btn', $extension: 'png')
+	@if type-of($buttons) != 'list'
+		@error "$buttons 인자는 리스트여야만 합니다."
+
+	@each $button in $buttons
+		.#{$button}-bnt
+			background: url('#{$image-path}/#{$button}#{$suffix}.#{$extension}')
+
++makeButtons( (song, work, wark, do, move, fly), '../images/icons', $extension: 'jpg' )
+
++makeButtons($buttons)
+

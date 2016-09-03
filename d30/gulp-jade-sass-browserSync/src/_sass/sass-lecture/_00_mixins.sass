@@ -1,0 +1,16 @@
+// * ----------------------------------------
+// * CSS3 미디어쿼리를 손쉽게 사용하기 위한 믹스인 정의
+// * ----------------------------------------
+// control
+=mq($rwd)
+	@if $rwd == 'mobile'
+		@media #{$media-type} and ($mq-prop : $mobile)
+			@content
+
+	@if $rwd == 'tablet'
+		@media #{$media-type} and ($mq-prop : $tablet)
+			@content
+
+	@if $rwd == 'desktop'
+		@media #{$media-type} and ($mq-prop : $desktop)
+			@content
