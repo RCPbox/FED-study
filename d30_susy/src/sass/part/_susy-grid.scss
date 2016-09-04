@@ -4,7 +4,45 @@
 // * -----------------------------------------
 @import "susy";
 
+// 레이아웃 관련된것은 이쪽에 처리. [높이와 레이아웃 관련만]
+
 // 베이스라인 변경값
 $base-line-height: 24px;
 // 변수명을 susy-gap 으로 바꿈.
 $susy-gap: $base-line-height;
+
+#page{
+	@include container(2 1/12 show);
+	min-height: 100vh;
+}
+
+#page-header{
+	height: $susy-gap * 8;
+}
+
+#gnb{
+	height: $susy-gap * 3;
+}
+
+#page-main{
+	@include container;
+	// height: $susy-gap * 25
+	
+	.news, .showcase{
+		// height: $susy-gap * 32;
+		height: $susy-gap * 15;
+	}
+	.news {
+		// @include span(1 of 2 1/12);
+	}
+
+	.showcase {
+		// at은 장소 지역을 나타내는 전치사. 
+		// 1 컬럼을 가지는데 2번째 위치에 있게해라
+		// @include span(1 at 2 of 2 1/12);
+	}
+}// #page-main
+
+#page-footer{
+	height: $susy-gap * 5;
+}
