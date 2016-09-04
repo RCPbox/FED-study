@@ -45,7 +45,7 @@ $bp-desktop: 980px;
 $susy: (
 	columns: 2,
 	gutters: 1/12,
-	gutter-position: inside
+	gutter-position: split
 	// 기본after, before, split, inside[padding사용. 간격의 빈틈이 없어짐.]
 );
 
@@ -99,11 +99,26 @@ $layout-tablet: 8 1/6;
 		// 	@include span(1 last );
 		// }
 		@include susy-breakpoint($bp-tablet, $layout-tablet){
-			@include span(5 at 4);
+			@include span(6);
+		}
+		.post{
+			height: $susy-gap *15;
+			@include susy-breakpoint($bp-tablet, $layout-tablet){
+				@include span(1 of 4 inside);
+				// 상위요소 6개 컬럼을 4개로 나눠서 한개씩.
+				
+				// &:nth-of-type(1) { @include span(1 at 4 of 2 1/12 inside); }
+				// &:nth-of-type(2) { @include span(1 at 2 of 2 1/12 inside); }
+				// &:nth-of-type(3) { @include span(1 at 1 of 2 1/12 inside); }
+				// &:nth-of-type(4) { @include span(1 at 3 of 2 1/12 inside); }
+			}
 		}
 	}
 
 	.showcase {
+		@include susy-breakpoint($bp-tablet, $layout-tablet){
+			@include span(2);
+		}
 		// at은 장소 지역을 나타내는 전치사. 
 		// 1 컬럼을 가지는데 2번째 위치에 있게해라
 		// at 이 있는 경우는 float right 를 사용해서 바꾸는 거고 이때 마진레프트와 라이트의 값을 없애 주는 방식을 취해 주는것.
@@ -114,5 +129,5 @@ $layout-tablet: 8 1/6;
 }// #page-main
 
 #page-footer{
-	height: $susy-gap * 5;
+	min-height: $susy-gap * 3;
 }
