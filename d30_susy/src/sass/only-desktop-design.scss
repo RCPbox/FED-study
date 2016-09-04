@@ -1,0 +1,15 @@
+@import "susy";
+// 수지 불러오고
+// 수지 전역 설정
+$susy: (
+	columns: 12,
+	gutter-position: split,
+	debug: (
+		image: show
+		// 컬럼 보이게 설정.
+	)
+);
+
+#page{
+	@include container(1200px);
+}
