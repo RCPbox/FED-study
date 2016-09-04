@@ -1,45 +1,115 @@
 // * -----------------------------------------
 // * Susy 그리드 프레임워크
 // * http://susydocs.oddbird.net/en/latest/
+//
+// * Mobile First > Tabelt > Desktop
+// * Flexible <------------> Static
+// * Simple   <------------> Complex
+// *
+// * Desktop First (Static Website)
+// *
+// * Breakpoint
+// * M - T - D
+// * 0 >> 568 >> 980
 // * -----------------------------------------
+
+// * --------------------------------
+// * Susy Mixins
+// * 1. container()
+// * 2. span()
+// *
+// * Susy Global Settings
+// * Sass -> Scss
+// * --------------------------------
+
 @import "susy";
 
 // 레이아웃 관련된것은 이쪽에 처리. [높이와 레이아웃 관련만]
 
-// 베이스라인 변경값
-$base-line-height: 24px;
+// * --------------------------------
+// * 베이스라인 변수
+$base-font-size: 14px;
+$base-line-height: $base-font-size * 1.5;
 // 변수명을 susy-gap 으로 바꿈.
 $susy-gap: $base-line-height;
 
+
+// * --------------------------------
+// * 중단점 변수
+$bp-tablet: 568px;
+$bp-desktop: 980px;
+
+
+// Susy 전역 레이아웃 설정. 
+// map설정 하면 밑에서 container 나 span 에 적용됨.
+$susy: (
+	columns: 2,
+	gutters: 1/12,
+	gutter-position: inside
+	// 기본after, before, split, inside[padding사용. 간격의 빈틈이 없어짐.]
+);
+
+// * --------------------------------
+// * 레이아웃 변수 [컬럼 거터]
+$layout-tablet: 8 1/6;
+
+
 #page{
-	@include container(2 1/12 show);
+	@include container(/* 2 1/12  */show);
 	min-height: 100vh;
+
+	@include susy-breakpoint($bp-tablet){
+		@include container( append($layout-tablet, show) );
+	}
 }
 
 #page-header{
-	height: $susy-gap * 8;
+	height: $susy-gap * 5;
+	@include susy-breakpoint($bp-tablet){
+		min-height: $susy-gap * 3;
+	}
 }
 
 #gnb{
-	height: $susy-gap * 3;
+	height: $susy-gap * 4;
+	@include susy-breakpoint($bp-tablet){
+		min-height: $susy-gap * 3;
+	}
 }
 
 #page-main{
 	@include container;
-	// height: $susy-gap * 25
+	// min-height: $susy-gap * 25
 	
 	.news, .showcase{
-		// height: $susy-gap * 32;
-		height: $susy-gap * 15;
+		// min-height: $susy-gap * 32;
+		min-height: $susy-gap * 15;
 	}
 	.news {
-		// @include span(1 of 2 1/12);
+		// Mobile
+		
+		// Tablet
+		// @media screen and (min-width: $bp-tablet){
+		// 	@include span(1 last );
+		// 	// @include span(1 of 2 1/12);
+		// }
+		
+		// susy mixin 
+		// @include susy-breakpoint($bp-tablet) {
+		// 	@include span(1 last );
+		// }
+		@include susy-breakpoint($bp-tablet, $layout-tablet){
+			@include span(5 at 4);
+		}
 	}
 
 	.showcase {
 		// at은 장소 지역을 나타내는 전치사. 
 		// 1 컬럼을 가지는데 2번째 위치에 있게해라
-		// @include span(1 at 2 of 2 1/12);
+		// at 이 있는 경우는 float right 를 사용해서 바꾸는 거고 이때 마진레프트와 라이트의 값을 없애 주는 방식을 취해 주는것.
+		// 네비나 헤더의 경우 화면을 꽉채우고 있고 new showcase는 안쪽의 공간을 차지 하고 있다. 이유는 span은 자신의 context를 찾게 된다. 그 context 에 대한 부분은 page에 설정되어 있긴 하지만 헤더나 푸터에 설정되어 있진 않다. 애네들에 대한 부모로 인식되는 것을 span의 부모로 인식되는 것은 이 page-main의 컨테이너에 해당한다. 그래서 이 코드가 있고 없고 할때 달라지게 된다. 컨테이너 값이 없어지게 되면 애들은 그리드 시스템과 별개로 처리 하게 된다. split을 쓰게 되면 first last를 쓸 필요 없다 그냥 떨어지지 않게 된다. 그래서 split 모드를 주로 선호 한다. 굳이 first last를 주지 않아도 되니깐
+		// @include span(1 at 2 of 2);
+		// of 는 나누기 2칸으로 나누고 2칸중 1칸을 쓰고 위치는 2번째 부터 배치
 	}
 }// #page-main
 
