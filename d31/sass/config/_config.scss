@@ -1,0 +1,16 @@
+@import "compass/utilities/sprites";
+// @import "bourbon";
+@import "susy";
+@import "../yamoo9/yamoo9";
+
+// yamoo9
+// - utils 는 helpers 를 의존하는 일반적인것들.
+// 		- de-unit 은 유닛을 제거하는 함수.
+// - helpers는 스타일링 하는데 도움을 주는 믹스인이나 플레이스홀더가 정의.
+// - normalize는 https://necolas.github.io/normalize.css/ 
+//   에릭마이어 리셋 같은 경우는 좀 예전 방식이고 성능의 이슈를 가져오기 때문에..
+//   모든 공간을 초기화 하는 작업을 하기 때문에 블필요하게 모든 요소에 접근하고 
+//   모든걸 초기화 하기 때문에 성능 이슈가 있다. 
+//   그래서 normalize 역할은 이런 에릭마이어 리셋 처럼 불필요하게 모든걸 초기화 하는게 아니라 
+//   실제 각 브라우저 사이의 차이점들을 개선시키기 위한 목적으로 만들어 졌다.
+//   IE 8+ 고려되었다. 제이쿼리1버전은 678고려하는데 2버전부터는 9부터 지원. 이렇게 바뀐다.

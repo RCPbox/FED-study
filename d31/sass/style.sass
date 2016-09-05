@@ -1,0 +1,69 @@
+@import config/config
+
+
+// -- yamoo9 사용 ------------------------
+// body
+	// +color(#171411)
+	// +bg-color(#f3ede5, 0.8)
+	// +position(absolute, top 20px)
+	// +relative(top -20px)
+
+	// &:before
+		// content: ''
+		// +absolute(top 10% left 100em)
+		// +margin(top 20px bottom -20px)
+		// +padding(left 1em right 1em)
+		// //* px 과 rem을 같이 써야 할때 쓰는 믹스인
+		// //* 최신브라우저는 rem 값 사용, 구형은 px 사용하는 믹스인
+		// +px-rem(margin, 0 22px)
+		// +px-rem(font-size, 22px)
+
+// .icon-memo-note
+// 	@extend %ir
+// 	+retina-image(memo-note, 32px 32px, 3)
+
+// .icon-pencil
+// 	@extend %ir
+// 	+retina-image(pencil, 12px 4px, 4)
+
+
+// #page
+	// // @extend %cf
+	// // @extend %hidden
+	// // @extend %invisible
+	// @extend %a11y-hidden
+	// @extend %focusable
+	// nav
+	// 	@extend %nav
+	
+	// footer
+	// 	.footer-lnb
+	// 		@extend %nav
+
+	// .banner
+		// +headings(4,6)
+		// 	font-weight: 100
+		// 	+font-size(32px)
+		// 	+opacity(0.7)
+			
+			// +hidpi(2)
+			// 	.title
+			// 		background-image: url('../images/title@2x.png')
+			// +hidpi(3)
+			// 	.title
+			// 		background-image: url('../images/title@2x.png')
+			
+			// .headline
+				// +retina-image(banner-headline, 320px 110px, 4, '_')
+				// // * ( 파일명, 사이즈, 자동으로 배율별 제작., @ or _)
+				// // * 두배커진 이미지 이기 때문에 백그라운드 사이즈를 원래 사이즈로 바꿔줘야 한다. 
+				// // * 이게 반응형웹디자인을 하기 위한 방식. 그래서 백그라운드 사이즈 자동으로 들어오게 된다.
+				// // * 96 dpi가 1배율.
+	// .banner
+	// 	@extend %center-box-block
+	// 	.center-box
+	// 		@extend %center-box-content
+	// //* 배너 안쪽에 어떤 컨텐츠를 정 가운데에 배치하고 싶다.
+	// //* 배너를 중심으로 해서
+	// //* Ghost Pseudo 가상으로 만들어지고.
+	// //* 이런걸 쓸때는 딤처리 레이아웃을 쓸때 사용하면 편하다.
