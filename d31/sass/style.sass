@@ -1,5 +1,67 @@
 @import config/config
 
+//
+	데스크톱 디자인 (고정)
+	Desktop Static Website Design
+
+@import susy-layout/susy-static-layout
+
+body
+	margin: 0
+
+#page
+	+container(show)
+	min-height: 100vh
+
+	.main, .aside
+		@extend %cf
+
+	.main
+		+span(7)
+		+bg-color(#7045CF, 0.6)
+		+px-rem(height, $v-gap * 24)
+		
+		[class^=inner-]
+			+px-rem(height, $v-gap * 12)
+			
+			// 1/8 정도의 거터를 사용하고 7개의 컬럼을 사용하는데 fluid 방식이고 after 다
+			+with-layout(7 1/8 fluid after)
+				&[class$=box1]
+					+span(1)// of 를 쓸려면 math:fluid 로 해야함. %트로됨.
+					+bg-color(#B64926, 0.6)
+
+				&[class$=box2]
+					+span(2)
+					+bg-color(#86AB1D, 0.6)
+
+				&[class$=box3]
+					+span(2)
+					+bg-color(#1D929B, 0.6)
+
+				&[class$=box4]
+					+span(last 2)
+					// +last // 마지막 의미라 float right됨.
+					// margin-right: 0
+					+bg-color(#D08006, 0.6)
+
+
+	.aside
+		+span(last 4)
+		// +push(1) // susy toolkit
+		+bg-color(#E99F3F, 0.6)
+		+px-rem(height, $v-gap * 17)
+
+// ------ test ------------------
+// body
+// 	+margin(top 30px bottom 20px)
+
+// #page
+// 	+container()
+
+// 	.logo
+// 		+span(4)
+// 	.utils
+// 		+span(6)
 
 // -- yamoo9 사용 ------------------------
 // body
