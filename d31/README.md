@@ -243,7 +243,7 @@ $susy: (
 #### Float Isolate 테크닉
 
 ##### 문제와 해결책
-* [Sub Pixel 랜더링 문제](http://ejohn.org/blog/sub-pixel-problems-in-css/)
+* [Sub Pixel 랜더링 문제(ie하위브라우저)](http://ejohn.org/blog/sub-pixel-problems-in-css/)
 * [Sub Pixel 랜더링 해결책](http://thelucid.com/2010/12/03/the-solution-to-fluid-inconsistencies-and-equal-height-columns/)
 
 -

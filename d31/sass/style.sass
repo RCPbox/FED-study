@@ -19,37 +19,75 @@ body
 	.main
 		+span(7)
 		+bg-color(#7045CF, 0.6)
-		+px-rem(height, $v-gap * 24)
+		// +px-rem(height, $v-gap * 24)
+		height: $v-gap * 24
 		
-		[class^=inner-]
-			+px-rem(height, $v-gap * 12)
+		> [class^=inner-]
+			// +px-rem(height, $v-gap * 12)
+			height: $v-gap * 17
+
+			@extend %center-box-block
+			// 이 방식의 좋은점은 별도의 가로 세로 값을 몰라도 된다는 점.
+
+			// 실제 컨텐츠 가운데 배치
+			.inner-center
+				@extend %center-box-content
+				+color(#fff)
+				line-height: 1
+
+				*
+					+margin(top 0 bottom 0)
+
+			//가상 컨텐츠 가운데 배치
+			// &:after
+			// 	content: attr(class)
+			// 	color: #fff
+
+			// &:before
+			// 	content: attr(class)
+			// 	+color(#fff, 0.8)
+			// 	text-align: center
+			// 	display: block
+			// 	height: inherit
+			// 	line-height: $v-gap *12
+			// 	// 일반적인 가운데 배치 방식.
+
+
 			
-			// 1/8 정도의 거터를 사용하고 7개의 컬럼을 사용하는데 fluid 방식이고 after 다
-			+with-layout(7 1/8 fluid after)
+			// 1/8 정도의 거터를 사용하고 7개의 컬럼을 사용하는데 fluid 방식이고 after 이다
+			// +with-layout(7 1/8 fluid after)
+			// 영역 지정은 일반 플로팅방식으로는 무리고 isolate격리 플로팅 방식을 사용.
+			+with-layout(7 1/8 fluid inside isolate)
 				&[class$=box1]
-					+span(1)// of 를 쓸려면 math:fluid 로 해야함. %트로됨.
+					// of 를 쓸려면 math:fluid 로 해야함. %트로됨.
+					+span(1 at 7)
 					+bg-color(#B64926, 0.6)
 
 				&[class$=box2]
-					+span(2)
+					+span(2 at 5)
 					+bg-color(#86AB1D, 0.6)
 
 				&[class$=box3]
-					+span(2)
+					// @extend %hidden
+					+span(2 at 2)
 					+bg-color(#1D929B, 0.6)
 
 				&[class$=box4]
-					+span(last 2)
+					// @extend %hidden
+					+span(1 at 1)
+					// +span(last 2)
 					// +last // 마지막 의미라 float right됨.
 					// margin-right: 0
 					+bg-color(#D08006, 0.6)
 
 
 	.aside
-		+span(last 4)
-		// +push(1) // susy toolkit
+		// +span(last 4)
+		+span(4)
+		+push(1) // susy toolkit
 		+bg-color(#E99F3F, 0.6)
-		+px-rem(height, $v-gap * 17)
+		// +px-rem(height, $v-gap * 17)
+		height: $v-gap * 17
 
 // ------ test ------------------
 // body

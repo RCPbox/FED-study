@@ -11,6 +11,7 @@ $v-gap: $base-line-height;
 // Global Defaults
 // http://susydocs.oddbird.net/en/latest/settings/#global-defaults
 $susy: (
+	// flow: rtl, // 문화권에 따른 화면 흐름을 바꿈. [default]ltr
 	container: 1200px,
 	// container-position: left,
 	// [default]center: 가운데 정렬 left: 왼쪽 정렬 right: 오른쪽 정렬
@@ -20,7 +21,8 @@ $susy: (
 	// 100중에 80px 쓰고 거터 값으로 20px 쓴다.
 	// 기본값 1/4  .25
 	gutter-position: split,
-	// [default]after마진라이트 , before 마진레프트 , split 마진 양쪽, inside 패딩, inside-static 내부의 패딩값을 static 하게 쓴다.
+	// [default]after마진라이트 , before 마진레프트 , split 마진 양쪽, 
+	// inside 패딩, inside-static 내부의 패딩값을 static 하게 쓴다.
 
 	// 고정 폭 디자인의 핵심!!!
 	math: static,
