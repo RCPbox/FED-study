@@ -1,0 +1,48 @@
+// * --------------------------------
+// * 버티컬 리듬 (수직방향 운율 설정)
+// * --------------------------------
+html {
+	// http://compass-style.org/reference/compass/typography/vertical_rhythm/#mixin-establish-baseline
+	@include establish-baseline();
+}
+
+@include headings() {
+	@include leader(1);// margin-top
+	// @include trailer(1);//default $lines: 1 밑에 한줄 추가. margin-bottom
+}
+
+@include headings(5, 6) {
+	font-weight: bold;
+	font-weight: 700;
+}
+
+h1 {
+	@include adjust-font-size-to(48px);// 3칸 잡음.
+	// @include trailer();//default $lines: 1 밑에 한줄 추가. margin-bottom
+	// @include leader();// margin-top
+}
+
+h2 {
+	@include adjust-font-size-to(32px);
+}
+
+h3 {
+	@include adjust-font-size-to(26px);
+}
+
+h4 {
+	@include adjust-font-size-to(22px);
+}
+
+h5 {
+	@include adjust-font-size-to(18px);
+}
+
+h6 {
+	@include adjust-font-size-to($base-font-size);
+}
+
+p {
+	@include adjust-font-size-to($base-font-size);
+	@include trailer(1);
+}

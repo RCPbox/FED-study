@@ -1,0 +1,37 @@
+// * 고정 형태의 레이아웃
+// * 중첩된 레이아웃
+// * 반응형 레이아웃
+// * 유동 그리드 레이아웃
+// * 적응형 그리드 레이아웃
+// * -------------------------------------------------------------
+// * 비정형 그리드 레이아웃 (디자이너가 그리드 시스템을 모르거나.., 안쓴다고 할 때)
+// * -------------------------------------------------------------
+$base-font-size: 14px;
+$base-line-height: $base-font-size * 1.5;
+// http://compass-style.org/reference/compass/typography/vertical_rhythm/
+// 버티컬 리듬을 사용하기 위해서는 모든 공간을 초기화 하는 작업을 해야 한다.
+// @import "compass/vertical_rhythm"; 
+// 콤파스에 버티컬 리듬이 있는데 먼저 $base-font-size 설정
+// $base-line-height 잡고 +establish-baseline() 믹스인을 사용.
+// 문서의 수직방향에 대한 운율을 설정 하는게 버티컬 리듬.
+
+$rhythm-unit: 'px';
+
+// $susy: (
+// 	columns: 3, //default 4
+// 	gutters: 1/12, //default 1/4
+// 	// 	gutter-position: split, // 거터 방향: 양쪽(split), 패딩 설정(inside)
+
+// 	// 고정 폭 디자인의 핵심!!!
+// 	// column-width: 80px,
+// 	// math: static,
+
+// 	debug:(
+// 		image: show-baseline, //default hide, show-columns , show-baseline 은  Compass의 vertical rhythms이라는게 있는데 이걸 사용하게 되면 base-line-height 에 맞추는건데..
+// 		// css를 가지고 수직에 대한 리듬을 지키는것을 말한다.
+// 		// https://drewish.com/tools/vertical-rhythm/
+// 		color: rgba(yellow, 0.3),
+// 		output: overlay,//default background
+// 		toggle:top right //overlay 가 될때 토글버튼의 위치. default top right
+// 	)
+// );

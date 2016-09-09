@@ -1,0 +1,78 @@
+$susy: (
+	columns: 2,                    // 4
+	gutters: 1/8,                 // 1/4
+
+	// global-box-sizing: border-box,
+
+	debug: (
+		// image: show,               // hide
+		color: rgba(#FD5D79, 0.45)
+		// output: overlay,        // background
+		// toggle: top right       // top right
+	)
+);
+
+// * -------------------------------------
+// * susy 문서 내 모든 요소에 border-box 까지 공간 확장. default content-box
+@include global-box-sizing(border-box);
+
+#page{
+	@include container(/* show */);
+	
+	> *{
+		padding: 0 $base-line-height;
+	}
+}
+
+#page-header{
+	@include span(full);
+	height: $base-line-height * 7;
+	@include bg-color(#F777CF, 0.5);
+}
+
+#gnb{
+	@include span(full);
+	@include bg-color(#24D624, 0.5);
+}
+
+#page-main{
+	@include span(full);
+	@include bg-color(#33EBF1, 0.5);
+	
+	padding: 0;
+
+	@include headings() {
+		padding: 0 $base-line-height;
+	}
+
+	p {
+		padding: 0 $base-line-height;
+	}
+	
+	.article{
+		img{
+			//yamoo9 이미지 반응형에 맞게 설정.
+			@include rwd-image(800px);
+			@include leader(1);
+			@include trailer(1);
+		}
+	}
+}
+
+#page-footer{
+	@include span(full);
+	@include bg-color(#6060EF, 0.5);
+}
+
+.rwd-video-wrapper,
+.rwd-video-container iframe,
+.rwd-video-container {
+	padding: 0;
+}
+
+.rwd-video-container {
+	border: 0;
+	@include leader(1);
+	@include trailer(1);
+	@include rwd-video(true, '.rwd-video-wrapper', 800px);
+}
