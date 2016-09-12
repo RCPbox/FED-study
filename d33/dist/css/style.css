@@ -1,0 +1,142 @@
+#page aside ul.gallery li img {
+  height: auto;
+  max-width: 100%;
+}
+
+#page aside ul.gallery {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#page {
+  width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: -webkit-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%), -webkit-linear-gradient(top, #000 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%), linear-gradient(to bottom, #000 1px, transparent 1px);
+  background-size: 100px, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+  min-height: 100vh;
+}
+#page:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+#page header {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  min-height: 240px;
+  background-color: hsla(207,100%,72%,0.7);
+}
+#page header .logo {
+  width: 380px;
+  float: left;
+  margin-right: 20px;
+  background-color: hsla(48,100%,69%,0.7);
+  min-height: 240px;
+}
+#page header .utils {
+  width: 280px;
+  float: left;
+  margin-right: 20px;
+  min-height: 240px;
+  background-color: hsla(101,100%,65%,0.7);
+}
+#page header .search {
+  width: 480px;
+  float: left;
+  margin-right: 0;
+  min-height: 240px;
+  background-color: hsla(4,96%,61%,0.7);
+}
+#page header .search .front {
+  width: 280px;
+  float: left;
+  margin-right: 20px;
+  min-height: 120px;
+  background-color: hsla(321,94%,53%,0.7);
+}
+#page header .search .back {
+  width: 180px;
+  float: left;
+  margin-right: 0;
+  min-height: 120px;
+  background-color: hsla(62,100%,59%,0.7);
+}
+#page nav {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  min-height: 144px;
+  background-color: hsla(274,100%,66%,0.7);
+}
+#page main {
+  width: 780px;
+  float: left;
+  margin-right: 20px;
+  background-color: hsla(215,99%,77%,0.7);
+  min-height: 1008px;
+}
+#page aside {
+  width: 380px;
+  float: left;
+  margin-right: 0;
+  min-height: 1008px;
+  background-color: hsla(105,100%,73%,0.4);
+}
+#page aside ul.gallery li {
+  width: 180px;
+  float: left;
+  margin-bottom: 20px;
+}
+#page aside ul.gallery li:nth-child(2n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+  margin-left: 0;
+}
+#page aside ul.gallery li:nth-child(2n + 2) {
+  margin-left: 200px;
+  margin-right: -100%;
+  clear: none;
+}
+#page aside ul.gallery li img {
+  width: 100%;
+}
+#page aside {
+  width: 380px;
+  float: left;
+  margin-right: 0;
+  background-color: hsla(105,100%,73%,0.7);
+}
+#page footer {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: hsla(166,100%,74%,0.7);
+  min-height: 192px;
+}
+
+
+
+/*# sourceMappingURL=maps/style.css.map */
