@@ -5,6 +5,11 @@ $bl: $base-line-height
 
 // 중간에 패딩이나 보더를 추가하더라도 레이아웃이 깨지지 않게 하려면 사용.
 +global-box-sizing(border-box)
+
+// _susy-layout.scss 에 있는 지역레이아웃
+// +layout() 으로 독립적 레이아웃 설정이 가능함.
++layout($mobile-layout)
+
 //
  * --------------------------------
  * 페이지 레이아웃
@@ -12,93 +17,45 @@ $bl: $base-line-height
 body
 	margin: 0
 
-// #page
-// 	+container()
-// 	height: 100vh
-
-// 	.demo
-// 		+padding(10px null 20px)
-// 		+absolute(top 10px z-index 20)
-
-// 		.mobile &
-// 			+static()
-// 			+margin(top 1% right 2%)	// yamoo9 식
-// 			+padding(null 1% null 1%)	// bourbon 방식
-// 			+padding(0 10px 14px 22px)	//표준방식
-
-// #gnb
-// 	@extend %navigation
-// 	li
-// 		+float(10px)
-
-// 		&:last-child
-// 			+float(last)
-
 #page
 	+container()
 	min-height: 100vh
 
-	header
-		+full
-		min-height: $bl * 10
-		+bg-color(#74C0FF, 0.7)
+	+susy-breakpoint($tablet, $tablet-layout)
+		+container()
 
-		.logo
-			+span(4)
-			+bg-color(#FFE061, 0.7)
-			min-height: $bl * 10
+	+susy-breakpoint($desktop, $desktop-layout)
+		+container()
+	
 
-		.utils
-			+span(3)
-			min-height: $bl * 10
-			+bg-color(#84FF4F, 0.7)
+	// header
+	// 	+full
+	// 	min-height: $bl * 10
+	// 	+bg-color(#333, 0.4)
 
-		.search
-			+span(last 5)
-			min-height: $bl * 10
-			+bg-color(#FC4B3E, 0.7)
+	// 	.logo
+	// 		+span(2 at 1)
+	// 		min-height: $bl *10
+	// 		+bg-color(#FC4A54, 0.4)
+	// 	.utils
+	// 		+span(1 at 3)
+	// 		min-height: $bl * 10
+	// 		+bg-color(#25A04D, 0.4)
 
-			.front
-				+span(3)
-				min-height: $bl * 5
-				+bg-color(#F818A9, 0.7)
-			.back
-				+span(last 2)
-				min-height: $bl * 5
-				+bg-color(#F8FF31, 0.7)
 
-	nav
-		+full
-		min-height: $bl * 6
-		+bg-color(#B655FF, 0.7)
+// +layout($mobile-layout)
 
-	main
-		+span(8)
-		+bg-color(#8BBBFF, 0.7)
-		min-height: $bl * 42
-	aside
-		+span(4 last)
-		min-height: $bl * 42
-		+bg-color(#99FF79, 0.4)
-		//gutter suzyToolkit_function
-		//8개의 컬럼을 쓰는 한개의 거터폭이 되는것.
-		// +padding( gutters(8) )
-		
-		ul.gallery 
-			@extend %reset-list
-			
-			li
-				+gallery(2 of 4)
-				margin-bottom: gutter()
-				img
-					+rwd-image
-					// 이미지 폭이 고정되면 벗어나기 때문에 사용함.
+// #page header
+// 	+container()
+// 	min-height: $bl * 15
+// 	+bg-color(#333, 0.2)
 
-	aside
-		+span(4 last)
-		+bg-color(#99FF79, 0.7)
+// 	.logo
+// 		+span(1 at 2)
+// 		min-height: $bl * 10
+// 		+bg-color(#FC4A54, 0.4)
 
-	footer
-		+full
-		+bg-color(#7DFFE1, 0.7)
-		min-height: $bl * 8
+// 	.utils
+// 		+span(1 at 1)
+// 		min-height: $bl * 10
+// 		+bg-color(#E6FF3A, 0.4)
