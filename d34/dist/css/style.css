@@ -1,0 +1,30 @@
+@media (min-width: 480px) {
+  #app {
+    background: #000;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#app {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: -webkit-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 10.4934%, transparent 10.4934%, transparent 11.88325%, rgba(102, 102, 255, 0.25) 11.88325%, rgba(179, 179, 255, 0.25) 32.87005%, transparent 32.87005%, transparent 34.2599%, rgba(102, 102, 255, 0.25) 34.2599%, rgba(179, 179, 255, 0.25) 65.7401%, transparent 65.7401%, transparent 67.12995%, rgba(102, 102, 255, 0.25) 67.12995%, rgba(179, 179, 255, 0.25) 88.11675%, transparent 88.11675%, transparent 89.5066%, rgba(102, 102, 255, 0.25) 89.5066%, rgba(179, 179, 255, 0.25)), -webkit-linear-gradient(top, #000 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 10.4934%, transparent 10.4934%, transparent 11.88325%, rgba(102, 102, 255, 0.25) 11.88325%, rgba(179, 179, 255, 0.25) 32.87005%, transparent 32.87005%, transparent 34.2599%, rgba(102, 102, 255, 0.25) 34.2599%, rgba(179, 179, 255, 0.25) 65.7401%, transparent 65.7401%, transparent 67.12995%, rgba(102, 102, 255, 0.25) 67.12995%, rgba(179, 179, 255, 0.25) 88.11675%, transparent 88.11675%, transparent 89.5066%, rgba(102, 102, 255, 0.25) 89.5066%, rgba(179, 179, 255, 0.25)), linear-gradient(to bottom, #000 1px, transparent 1px);
+  background-size: 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+}
+#app:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+
+
+/*# sourceMappingURL=maps/style.css.map */

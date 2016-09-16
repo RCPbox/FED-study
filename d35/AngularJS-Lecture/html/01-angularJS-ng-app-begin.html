@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app><!-- ng-app 이것만 붙이면 앵귤러JS app 이 된것. -->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>AngularJS - 01 - ng-app</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/app.css">
+	<!-- 로컬 AngularJS v1.4.4 -->
+	<script src="../js/libs/angular.js"></script>
+	<!--앵귤러 버전별 https://developers.google.com/speed/libraries/#angularjs -->
+
+	<!-- 제이쿼리 head에서 불러왔고 -->
+	<script src="../js/libs/jquery.js"></script>
+</head>
+<!-- 어떤 데이터에 변수값을 지정할 수 있다. 
+변수를 html에 직접 Directives 로 입력할 수 있다.
+app이 초기화 되면 app 식별하게 되고 초기화가 수행되면 변수에 값이 담긴다.
+모델 데이터-->
+<body data-ng-init=" homepage_name='AngularJS Home'; homepage_link_path='https://angularjs.org' ">
+	<!-- app을 의미하는 id -->
+	<div id="app">
+		
+		<!-- 표현식 {{ .. }}  더블 브레이스 사용. 연산처리 해줌.-->
+		<!-- {{ '자바스크립트 - ' + (20+15) + ' -표현식' }} -->
+		<input type="text" data-ng-model="custom_name" placeholder="http://www.site.com" >
+							<!-- ng-model 입력과 출력 양방향 데이터바인딩. 모델과 뷰하고 연결되는것.-->
+		<p>
+			<a href="{{homepage_link_path}}" >{{ custom_name }}</a> <!-- ng-bind 는 {{ expression }} 과 같다. -->
+			<!-- <a href="{{homepage_link_path}}" data-ng-bind="custom_name"></a> --><!-- ng-bind 입력과 출력 양방향 데이터바인딩 -->
+
+			<!-- 변수 사용. 모델 데이터 처리 뷰-->
+			<!-- <a href="{{homepage_link_path}}" data-ng-bind="custom_name">{{homepage_name}}</a> -->
+			<!-- 뷰를 예전에는 만들기 힘들었는데 angularJS는 html에 직접 입력하는 방식. 그걸 지원하는 방법이 {{ expression }} -->
+		</p>
+
+		<h1 lang="en">
+			<a href="https://angularjs.org/" target="_blank">
+				<img src="https://angularjs.org/img/AngularJS-large.png" alt="AngularJS Home">
+			</a>
+		</h1>
+
+		<h2>
+			<a rel="external" href="https://docs.angularjs.org/api/ng/directive" target="_blank">Directive</a>
+		</h2>
+
+		<ul>
+			<li><a rel="external" href="https://docs.angularjs.org/api/ng/directive/ngApp" target="_blank"><code>ng-app</code></a></li>
+			<!-- 앵귤러의 모듈을 실제 지시할수 있게 만들수 있다. 애를 어디에 쓰냐면 앵귤러JS app 에 자동으로 준비를 하는 단계를 구성하게 해주는 것.
+			이때 ngApp 이라고 쓰는데 body 나 html 엘리먼트인 루트 엘리먼트에 사용하면 된다. 
+			패키지 angularJS 설치하면 자동으로 스니펫 생성
+
+			-->
+			<li><a rel="external" href="https://docs.angularjs.org/api/ng/directive/ngInit" target="_blank"><code>ng-init</code></a></li>
+		</ul>
+
+	</div>
+
+</body>
+</html>
+<!-- ng-app , ng-init , ng-model , ng-bind 사용.-->
+<!-- 저걸 제이쿼리로 짤려면 먼저 인풋 컴포넌트에 접근한 다음에 캐시뜨고
+ 인풋 컴포넌트 에 입력되는 텍스트를 감지 하기 위해 체인지 이벤트를 써야 한다.
+ 그리고 사용자가 입력하는 값을 받아와야 한다. 그럼 대상$this.value 해서 값을 받아온다.
+ 그리고  그 아래 있는 a 에 접근 해야 하니 a 참조해야 하고 내용 컨텐츠 값에다가 벨류값을 넣어 줘야 한다.
+ 이런 복잡한 일을 앵귤러는 마크업에 Directive 를 쓰는것 만으로 해결 가능.
+-->

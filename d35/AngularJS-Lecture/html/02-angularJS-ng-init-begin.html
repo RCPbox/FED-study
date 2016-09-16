@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko-KR" 
+	data-ng-app 
+	data-ng-init="
+		directive={
+			'link':'https://docs.angularjs.org/api/ng/directive',
+			'content':'디렉티브'
+		};
+		ng_app=[
+			'https://docs.angularjs.org/api/ng/directive/ngApp',
+			'ngApp'
+		];
+		ng_init=[
+			'https://docs.angularjs.org/api/ng/directive/ngInit',
+			'ngInit'
+		];
+	"
+><!-- directive 객체 , ng_app 배열데이타.-->
+<!-- ng-init 은 현재스코프 내에서만 쓰는 거기 떄문에 루트에서 정의 했기 때문에 루트내의 스코프에서는 모두 사용 가능.-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>AngularJS - 02 - ng-init</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/app.css">
+	<script src="../js/libs/angular.js"></script>
+	<script src="../js/libs/jquery.js"></script>
+</head>
+<body>
+
+	<div id="app">
+
+		<h1 lang="en">
+			<a href="https://angularjs.org/" target="_blank">
+				<img src="https://angularjs.org/img/AngularJS-large.png" alt="AngularJS Home">
+			</a>
+		</h1>
+
+		<h2>						<!-- 객체 사용 -->
+			<a rel="external" href="{{ directive.link }}" target="_blank">{{ directive.content }}</a>
+		</h2>
+
+		<ul>							<!-- 배열 사용 -->
+			<li><a rel="external" href="{{ ng_app[0] }}" target="_blank"><code data-ng-bind="ng_app[1]"></code></a></li>
+			<li><a rel="external" href="{{ ng_init[0] }}" target="_blank"><code>{{ ng_init[1] }}</code></a></li>
+		</ul>
+
+	</div>
+
+</body>
+</html>

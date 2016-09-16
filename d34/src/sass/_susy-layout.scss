@@ -1,0 +1,97 @@
+@import "susy/susy";
+// 수지 불러오고
+// * -------------------------------------
+// * Susy2 글로벌 설정 (Map)
+// * -------------------------------------
+
+// baseline 높이를 조정하려면....
+// compass껄 사용. 콤파스 없어도 변수값만 있으면 사용 가능.
+$base-font-size: 16px;
+$base-line-height: $base-font-size * 1.5; // 24px
+
+// * -------------------------------------
+// * 고정폭 디자인(Desktop)
+// * 960px, 12, 60px, 20px(10px, 10px)
+// * 1200px, 16, 55px, 20px(10px, 10px)
+// * 1200px, 12, 80px, 20px(10px, 10px)
+// $susy: (
+// 	// 고정폭 필수 요소.
+// 	math: static,
+// 	column-width: 80px,
+
+// 	last-flow: from,
+// 	columns: 12,
+// 	gutters: 20px/80px,
+// 	// gutter-position: split, // after, before, split, inside, inside-static
+// 	debug: (
+// 		image: show
+// 		// 컬럼 보이게 설정.
+// 	)
+// );
+
+
+// * -------------------------------------
+// * 유동폭 디자인(Mobile)
+
+
+
+// * -------------------------------------
+// * 반응형 디자인(Mobile - Tablet - Desktop)
+
+// * 유동폭 레이아웃 (RWD) 
+
+
+// * 적응형 레이아웃 (AWD)
+
+
+// 중단점 설정.
+$tablet: 670px;
+$desktop: 1140px;
+
+// * -------------------------------------
+// * 정형 그리드 는 12개 컬럼이 똑같은 폭을 가지고 있다.
+// * 1-1-1-1-1-1-1-1-1-1-1-1
+// * 2-2-2-2-2-2
+// 
+// * 비정형 그리드 는 비율을 정할수 있다.
+// * 디자이너가 그리드 시스템을 사용하지 않았을때 susy 사용.
+// * -------------------------------------
+$susy: (
+	container: 980px,
+	columns: 1 2 3 2 1,
+	gutters: 40px/302px,
+	// gutter-position: after,
+	output: isolate,
+	debug: (
+		image: show
+	)
+	
+);
+// 비정형 그리드를 전역에 레이아웃을 만들었는데 지역으로 만들수도 있다.
+
+$mobile-layout: (
+	columns: 1 1,
+	gutters: .1, // 1/10
+	debug: (
+		image: show,
+		color: rgba(pink, 0.7)
+	)
+);
+
+$tablet-layout: (
+	columns: 3 2 1,
+	gutters: 1/6,
+	debug: (
+		image: show,
+		color: rgba(blue, 0.7)
+	)
+);
+
+$desktop-layout: (
+	columns: 1 5 1,
+	gutters: 1/12,
+	debug: (
+		image: show,
+		color: rgba(red, 0.7)
+	)
+);

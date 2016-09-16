@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app="angularRefApp"><!-- ng-app 있고..-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>AngularJS - 04 - Module &amp; Controller</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/app.css">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script> -->
+	<script src="../js/libs/angular.js"></script>
+	<script src="../js/libs/jquery.js"></script>
+</head>
+<body>
+
+	<div id="app">
+
+		<h1 lang="en" data-ng-controller="h1Controller">
+			<!-- {{home}} -->
+			<a href="https://angularjs.org/" target="_blank">
+				<img src="https://angularjs.org/img/AngularJS-large.png" alt="{{home}}">
+			</a>
+		</h1>
+
+		<h2 data-ng-controller="h2Controller"><!-- ng-init 있음. -->
+			<a rel="external" href="{{directive[0]}}" target="_blank">{{directive[1]}}</a>
+		</h2>
+
+		<!-- ng-init 있음. -->
+		<ul data-ng-controller="directive_list_Controller">
+			<li
+				data-ng-repeat="directive in ng_directives"
+				data-ng-class="{odd: $odd, even: $even};"
+			>
+				<a rel="external" href="{{directive.href}}" target="_blank">
+					<span>{{$index+1}}</span>
+					<code data-ng-bind="directive.content"></code>
+				</a>
+			</li>
+		</ul>
+
+	</div>
+
+<script src="../js/app-04-begin.js"></script>
+</body>
+</html>

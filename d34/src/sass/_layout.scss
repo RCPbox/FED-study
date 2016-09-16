@@ -1,0 +1,77 @@
+@import "susy";
+$base-font-size: 16px;
+$base-line-height: $base-font-size * 1.5; // 24px
+$bl: $base-line-height;
+
+$susy: (
+	container: 980px,
+	columns: 1 2 3 2 1,
+	gutters: 40px/302px,
+	// gutter-position: after,
+	output: isolate,
+	debug: (
+		image: show
+	)
+);
+// $m-layout: (
+
+// );
+
+
+// http://susydocs.oddbird.net/en/latest/toolkit/#susy-media  밑에쪽에 설명.
+$susy-media: (
+	min: 20em,
+	max: 80em 60em,
+	string:'screen and (orientation: landscape)',
+	pair:min-height 40em,
+	map: (
+		media: screen,
+		max-width: 30em
+	),
+);
+
+
+#app{
+	// @include container();
+
+	//MF 모바일 퍼스트 일땐 min-widht 사용.  모바일 경우 적은숫자부터 해야 덮어쓴다.
+	// @media screen and (min-width: 480px) {} //480 이상일때 스타일 먹는다. 
+	// @media screen and (min-width: 820px) {}
+	// @media screen and (min-width: 1100px) and (orientation: landscape{}
+												// 가로모드
+	//MF - Susy2 모바일 퍼스트
+	$mq: 480px;
+	$tq: rem(820px);
+	$dq: rem(1100px);
+	@include susy-media($mq){ background: #000;}
+	// @include susy-media($tq){}
+	// @include susy-media($dq){}
+	// 리스트 사용.
+	// @include susy-media((
+	// 	min-width: $dq,
+	// 	orientation:landscape
+	// )){}
+
+
+	// 위에 선언과 아래 선언이 개별 독립적으로 구성되길 원한다면 조건 하나가 더 추가된다.
+	// @media screen and (min-width: 480px) and (min-width: 819px){}
+	// @media screen and (min-width: 820px) and (min-width: 1099px){}
+	// @media screen and (min-width: 1100px) {}
+	// @include susy-media($mq){}
+	// @include susy-media($tq){}
+	// @include susy-media($dq){}
+
+
+	//DF 데스트탑 퍼스트 일땐 max-width 사용.  데탑경우 큰수부터 해야 덮어쓴다.
+	// @media screen and (max-width: 1100px) {}
+	// @media screen and (max-width: 820px) {}
+	// @media screen and (max-width: 480px) {}
+
+	
+	// @media screen and (max-width: 480px) {}
+	// 							//최소 				//최대
+	// @media screen and (min-width: 479px) and (max-width: 820px){}
+	// @media screen and (min-width: 819px) and (max-width: 1100px){}
+
+
+}
